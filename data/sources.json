@@ -44,6 +44,55 @@
       "service_days": ["sunday"],
       "file": "data/raw/tpexpress/cleethorpes-doncaster-sun.png",
       "footnotes": []
+    },
+    {
+      "id": "tpe-doncaster-cleethorpes-mf",
+      "operator": "TransPennine Express",
+      "title": "Liverpool and Manchester to Cleethorpes",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/tpexpress/doncaster-cleethorpes-mf.png",
+      "footnotes": [
+        {
+          "code": "C",
+          "text": "Also calls at Kirk Sandall 2247, Hatfield & Stainforth 2252, Thorne South 2256, Crowle 2305 and Althorpe 2310"
+        },
+        {
+          "code": "D",
+          "text": "Continues to Manchester Airport, arriving at 0027"
+        },
+        {
+          "code": "FSX",
+          "text": "Monday to Thursday"
+        },
+        {
+          "code": "FO",
+          "text": "Friday only"
+        }
+      ]
+    },
+    {
+      "id": "tpe-doncaster-cleethorpes-sat",
+      "operator": "TransPennine Express",
+      "title": "Liverpool and Manchester to Cleethorpes",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "file": "data/raw/tpexpress/doncaster-cleethorpes-sat.png",
+      "footnotes": [
+        {
+          "code": "A",
+          "text": "Also calls at Kirk Sandall 2243, Hatfield & Stainforth 2248, Thorne South 2252, Crowle 2301 and Althorpe 2306"
+        }
+      ]
+    },
+    {
+      "id": "tpe-doncaster-cleethorpes-sun",
+      "operator": "TransPennine Express",
+      "title": "Liverpool and Manchester to Cleethorpes",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "file": "data/raw/tpexpress/doncaster-cleethorpes-sun.png",
+      "footnotes": []
     }
   ]
 }
