@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "id": "tpe-cleethorpes-doncaster-mf",
+      "operator": "TransPennine Express",
+      "title": "Cleethorpes to Manchester and Liverpool",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/tpexpress/cleethorpes-doncaster-mf.png",
+      "footnotes": [
+        {
+          "code": "D",
+          "text": "Also calls at Althorpe 0552, Crowle 0558, Thorne South 0606, Hatfield & Stainforth 0611 and Rotherham Central 0645"
+        },
+        {
+          "code": "MO",
+          "text": "Monday only"
+        },
+        {
+          "code": "MSX",
+          "text": "Tuesday to Friday"
+        }
+      ]
+    },
+    {
+      "id": "tpe-cleethorpes-doncaster-sat",
+      "operator": "TransPennine Express",
+      "title": "Cleethorpes to Manchester and Liverpool",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "file": "data/raw/tpexpress/cleethorpes-doncaster-sat.png",
+      "footnotes": [
+        {
+          "code": "A",
+          "text": "Also calls at Althorpe 0552, Crowle 0558, Thorne South 0606, Hatfield & Stainforth 0611 and Rotherham Central 0645"
+        }
+      ]
+    },
+    {
+      "id": "tpe-cleethorpes-doncaster-sun",
+      "operator": "TransPennine Express",
+      "title": "Cleethorpes to Manchester and Liverpool",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "file": "data/raw/tpexpress/cleethorpes-doncaster-sun.png",
+      "footnotes": []
+    }
+  ]
+}
