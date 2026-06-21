@@ -1,0 +1,172 @@
+{
+  "routes": [
+    {
+      "id": "cleethorpes_to_doncaster",
+      "name": "Cleethorpes to Doncaster",
+      "operator_scope": ["TransPennine Express"],
+      "source_ids": [
+        "tpe-cleethorpes-doncaster-mf",
+        "tpe-cleethorpes-doncaster-sat",
+        "tpe-cleethorpes-doncaster-sun"
+      ],
+      "direction": "cleethorpes_to_doncaster",
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "core_station_sequence": [
+        "cleethorpes",
+        "grimsby_town",
+        "habrough",
+        "barnetby",
+        "scunthorpe",
+        "doncaster"
+      ],
+      "sections": [
+        {
+          "id": "cleethorpes_grimsby_town",
+          "from": "cleethorpes",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_habrough",
+          "from": "grimsby_town",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 10,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_barnetby",
+          "from": "habrough",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 9,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barnetby_scunthorpe",
+          "from": "barnetby",
+          "to": "scunthorpe",
+          "scheduled_runtime_minutes": 15,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "scunthorpe_doncaster",
+          "from": "scunthorpe",
+          "to": "doncaster",
+          "scheduled_runtime_minutes": 31,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [
+        {
+          "id": "scunthorpe_doncaster_extra_calls",
+          "applies_to_footnotes": ["A", "D"],
+          "between": {
+            "from": "scunthorpe",
+            "to": "doncaster"
+          },
+          "station_sequence": [
+            "althorpe",
+            "crowle",
+            "thorne_south",
+            "hatfield_stainforth"
+          ]
+        },
+        {
+          "id": "doncaster_meadowhall_extra_call",
+          "applies_to_footnotes": ["D"],
+          "between": {
+            "from": "doncaster",
+            "to": "meadowhall"
+          },
+          "station_sequence": ["rotherham_central"]
+        }
+      ],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible TPE timings in the uploaded screenshots.",
+        "Capacity is simplified for the MVP and does not represent signalling blocks or exact railway infrastructure.",
+        "Optional calls are preserved for timetable transcription, but the MVP simulation should focus on the core Cleethorpes to Doncaster corridor."
+      ]
+    },
+    {
+      "id": "doncaster_to_cleethorpes",
+      "name": "Doncaster to Cleethorpes",
+      "operator_scope": ["TransPennine Express"],
+      "source_ids": [
+        "tpe-doncaster-cleethorpes-mf",
+        "tpe-doncaster-cleethorpes-sat",
+        "tpe-doncaster-cleethorpes-sun"
+      ],
+      "direction": "doncaster_to_cleethorpes",
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "core_station_sequence": [
+        "doncaster",
+        "scunthorpe",
+        "barnetby",
+        "habrough",
+        "grimsby_town",
+        "cleethorpes"
+      ],
+      "sections": [
+        {
+          "id": "doncaster_scunthorpe",
+          "from": "doncaster",
+          "to": "scunthorpe",
+          "scheduled_runtime_minutes": 27,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "scunthorpe_barnetby",
+          "from": "scunthorpe",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 15,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barnetby_habrough",
+          "from": "barnetby",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_grimsby_town",
+          "from": "habrough",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 15,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_cleethorpes",
+          "from": "grimsby_town",
+          "to": "cleethorpes",
+          "scheduled_runtime_minutes": 9,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [
+        {
+          "id": "doncaster_scunthorpe_extra_calls",
+          "applies_to_footnotes": ["A", "C"],
+          "between": {
+            "from": "doncaster",
+            "to": "scunthorpe"
+          },
+          "station_sequence": [
+            "kirk_sandall",
+            "hatfield_stainforth",
+            "thorne_south",
+            "crowle",
+            "althorpe"
+          ]
+        }
+      ],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible TPE timings in the uploaded screenshots.",
+        "Capacity is simplified for the MVP and does not represent signalling blocks or exact railway infrastructure.",
+        "Optional calls are preserved for timetable transcription, but the MVP simulation should focus on the core Doncaster to Cleethorpes corridor."
+      ]
+    }
+  ]
+}

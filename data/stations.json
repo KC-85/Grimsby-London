@@ -1,0 +1,160 @@
+{
+  "stations": [
+    {
+      "id": "cleethorpes",
+      "name": "Cleethorpes",
+      "crs": "CLE",
+      "tags": ["core_corridor", "tpe_source"]
+    },
+    {
+      "id": "grimsby_town",
+      "name": "Grimsby Town",
+      "crs": "GMB",
+      "tags": ["core_corridor", "tpe_source"]
+    },
+    {
+      "id": "habrough",
+      "name": "Habrough",
+      "crs": "HAB",
+      "tags": ["core_corridor", "tpe_source"]
+    },
+    {
+      "id": "barnetby",
+      "name": "Barnetby",
+      "crs": "BTB",
+      "tags": ["core_corridor", "tpe_source"]
+    },
+    {
+      "id": "scunthorpe",
+      "name": "Scunthorpe",
+      "crs": "SCU",
+      "tags": ["core_corridor", "tpe_source"]
+    },
+    {
+      "id": "doncaster",
+      "name": "Doncaster",
+      "crs": "DON",
+      "tags": ["core_corridor", "tpe_source", "london_interchange"]
+    },
+    {
+      "id": "kirk_sandall",
+      "name": "Kirk Sandall",
+      "crs": "KKS",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "althorpe",
+      "name": "Althorpe",
+      "crs": "ALP",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "crowle",
+      "name": "Crowle",
+      "crs": "CWE",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "thorne_south",
+      "name": "Thorne South",
+      "crs": "TNS",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "hatfield_stainforth",
+      "name": "Hatfield & Stainforth",
+      "crs": "HFS",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "rotherham_central",
+      "name": "Rotherham Central",
+      "crs": "RMC",
+      "tags": ["footnote_call"]
+    },
+    {
+      "id": "meadowhall",
+      "name": "Meadowhall",
+      "crs": "MHS",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "sheffield",
+      "name": "Sheffield",
+      "crs": "SHF",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "dore_totley",
+      "name": "Dore & Totley",
+      "crs": "DOR",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "stockport",
+      "name": "Stockport",
+      "crs": "SPT",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "manchester_piccadilly",
+      "name": "Manchester Piccadilly",
+      "crs": "MAN",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "manchester_airport",
+      "name": "Manchester Airport",
+      "crs": "MIA",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "manchester_oxford_road",
+      "name": "Manchester Oxford Road",
+      "crs": "MCO",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "urmston",
+      "name": "Urmston",
+      "crs": "URM",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "irlam",
+      "name": "Irlam",
+      "crs": "IRL",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "birchwood",
+      "name": "Birchwood",
+      "crs": "BWD",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "warrington_central",
+      "name": "Warrington Central",
+      "crs": "WAC",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "warrington_west",
+      "name": "Warrington West",
+      "crs": "WAW",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "liverpool_south_parkway",
+      "name": "Liverpool South Parkway",
+      "crs": "LPY",
+      "tags": ["tpe_onward"]
+    },
+    {
+      "id": "liverpool_lime_street",
+      "name": "Liverpool Lime Street",
+      "crs": "LIV",
+      "tags": ["tpe_onward"]
+    }
+  ]
+}
