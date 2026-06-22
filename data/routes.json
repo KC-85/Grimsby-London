@@ -167,6 +167,436 @@
         "Capacity is simplified for the MVP and does not represent signalling blocks or exact railway infrastructure.",
         "Optional calls are preserved for timetable transcription, but the MVP simulation should focus on the core Doncaster to Cleethorpes corridor."
       ]
+    },
+    {
+      "id": "cleethorpes_to_lincoln",
+      "name": "Cleethorpes to Lincoln",
+      "operator_scope": ["East Midlands Railway"],
+      "source_ids": [
+        "emr-cleethorpes-lincoln-barton-mf-1",
+        "emr-cleethorpes-lincoln-barton-mf-2",
+        "emr-cleethorpes-lincoln-barton-sat-1",
+        "emr-cleethorpes-lincoln-barton-sat-2",
+        "emr-cleethorpes-lincoln-barton-sun-1",
+        "emr-cleethorpes-lincoln-barton-sun-2"
+      ],
+      "direction": "cleethorpes_to_lincoln",
+      "origin": "cleethorpes",
+      "destination": "lincoln",
+      "core_station_sequence": [
+        "cleethorpes",
+        "new_clee",
+        "grimsby_docks",
+        "grimsby_town",
+        "habrough",
+        "barnetby",
+        "market_rasen",
+        "lincoln"
+      ],
+      "sections": [
+        {
+          "id": "cleethorpes_new_clee",
+          "from": "cleethorpes",
+          "to": "new_clee",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_clee_grimsby_docks",
+          "from": "new_clee",
+          "to": "grimsby_docks",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_docks_grimsby_town",
+          "from": "grimsby_docks",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_habrough_emr",
+          "from": "grimsby_town",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 10,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_barnetby_emr",
+          "from": "habrough",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 10,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barnetby_market_rasen",
+          "from": "barnetby",
+          "to": "market_rasen",
+          "scheduled_runtime_minutes": 16,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "market_rasen_lincoln",
+          "from": "market_rasen",
+          "to": "lincoln",
+          "scheduled_runtime_minutes": 19,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible EMR timings in the uploaded screenshots.",
+        "Only source columns marked EM or EM* should be transcribed onto this route.",
+        "Columns marked TP or NT in the EMR screenshots are excluded from this East Midlands Railway route."
+      ]
+    },
+    {
+      "id": "lincoln_to_cleethorpes",
+      "name": "Lincoln to Cleethorpes",
+      "operator_scope": ["East Midlands Railway"],
+      "source_ids": [
+        "emr-lincoln-barton-cleethorpes-mf-1",
+        "emr-lincoln-barton-cleethorpes-mf-2",
+        "emr-lincoln-barton-cleethorpes-mf-3",
+        "emr-lincoln-barton-cleethorpes-sat-1",
+        "emr-lincoln-barton-cleethorpes-sat-2",
+        "emr-lincoln-barton-cleethorpes-sun-1",
+        "emr-lincoln-barton-cleethorpes-sun-2"
+      ],
+      "direction": "lincoln_to_cleethorpes",
+      "origin": "lincoln",
+      "destination": "cleethorpes",
+      "core_station_sequence": [
+        "lincoln",
+        "market_rasen",
+        "barnetby",
+        "habrough",
+        "grimsby_town",
+        "grimsby_docks",
+        "new_clee",
+        "cleethorpes"
+      ],
+      "sections": [
+        {
+          "id": "lincoln_market_rasen",
+          "from": "lincoln",
+          "to": "market_rasen",
+          "scheduled_runtime_minutes": 16,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "market_rasen_barnetby",
+          "from": "market_rasen",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 17,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barnetby_habrough_emr_return",
+          "from": "barnetby",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 10,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_grimsby_town_emr",
+          "from": "habrough",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 9,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_grimsby_docks",
+          "from": "grimsby_town",
+          "to": "grimsby_docks",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_docks_new_clee",
+          "from": "grimsby_docks",
+          "to": "new_clee",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_clee_cleethorpes",
+          "from": "new_clee",
+          "to": "cleethorpes",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible EMR timings in the uploaded screenshots.",
+        "Only source columns marked EM or EM* should be transcribed onto this route.",
+        "Columns marked TP or NT in the EMR screenshots are excluded from this East Midlands Railway route."
+      ]
+    },
+    {
+      "id": "cleethorpes_to_barton_on_humber",
+      "name": "Cleethorpes to Barton-on-Humber",
+      "operator_scope": ["East Midlands Railway"],
+      "source_ids": [
+        "emr-cleethorpes-lincoln-barton-mf-1",
+        "emr-cleethorpes-lincoln-barton-mf-2",
+        "emr-cleethorpes-lincoln-barton-sat-1",
+        "emr-cleethorpes-lincoln-barton-sat-2",
+        "emr-cleethorpes-lincoln-barton-sun-1",
+        "emr-cleethorpes-lincoln-barton-sun-2"
+      ],
+      "direction": "cleethorpes_to_barton_on_humber",
+      "origin": "cleethorpes",
+      "destination": "barton_on_humber",
+      "core_station_sequence": [
+        "cleethorpes",
+        "new_clee",
+        "grimsby_docks",
+        "grimsby_town",
+        "great_coates",
+        "healing",
+        "stallingborough",
+        "habrough",
+        "ulceby",
+        "thornton_abbey",
+        "goxhill",
+        "new_holland",
+        "barrow_haven",
+        "barton_on_humber"
+      ],
+      "sections": [
+        {
+          "id": "cleethorpes_new_clee_barton",
+          "from": "cleethorpes",
+          "to": "new_clee",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_clee_grimsby_docks_barton",
+          "from": "new_clee",
+          "to": "grimsby_docks",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_docks_grimsby_town_barton",
+          "from": "grimsby_docks",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_great_coates",
+          "from": "grimsby_town",
+          "to": "great_coates",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "great_coates_healing",
+          "from": "great_coates",
+          "to": "healing",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "healing_stallingborough",
+          "from": "healing",
+          "to": "stallingborough",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "stallingborough_habrough",
+          "from": "stallingborough",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_ulceby",
+          "from": "habrough",
+          "to": "ulceby",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "ulceby_thornton_abbey",
+          "from": "ulceby",
+          "to": "thornton_abbey",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "thornton_abbey_goxhill",
+          "from": "thornton_abbey",
+          "to": "goxhill",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "goxhill_new_holland",
+          "from": "goxhill",
+          "to": "new_holland",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_holland_barrow_haven",
+          "from": "new_holland",
+          "to": "barrow_haven",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barrow_haven_barton_on_humber",
+          "from": "barrow_haven",
+          "to": "barton_on_humber",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible EMR Barton branch timings in the uploaded screenshots.",
+        "Only source columns marked EM or EM* should be transcribed onto this route.",
+        "Columns marked TP or NT in the EMR screenshots are excluded from this East Midlands Railway route."
+      ]
+    },
+    {
+      "id": "barton_on_humber_to_cleethorpes",
+      "name": "Barton-on-Humber to Cleethorpes",
+      "operator_scope": ["East Midlands Railway"],
+      "source_ids": [
+        "emr-lincoln-barton-cleethorpes-mf-1",
+        "emr-lincoln-barton-cleethorpes-mf-2",
+        "emr-lincoln-barton-cleethorpes-mf-3",
+        "emr-lincoln-barton-cleethorpes-sat-1",
+        "emr-lincoln-barton-cleethorpes-sat-2",
+        "emr-lincoln-barton-cleethorpes-sun-1",
+        "emr-lincoln-barton-cleethorpes-sun-2"
+      ],
+      "direction": "barton_on_humber_to_cleethorpes",
+      "origin": "barton_on_humber",
+      "destination": "cleethorpes",
+      "core_station_sequence": [
+        "barton_on_humber",
+        "barrow_haven",
+        "new_holland",
+        "goxhill",
+        "thornton_abbey",
+        "ulceby",
+        "habrough",
+        "stallingborough",
+        "healing",
+        "great_coates",
+        "grimsby_town",
+        "grimsby_docks",
+        "new_clee",
+        "cleethorpes"
+      ],
+      "sections": [
+        {
+          "id": "barton_on_humber_barrow_haven",
+          "from": "barton_on_humber",
+          "to": "barrow_haven",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "barrow_haven_new_holland",
+          "from": "barrow_haven",
+          "to": "new_holland",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_holland_goxhill",
+          "from": "new_holland",
+          "to": "goxhill",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "goxhill_thornton_abbey",
+          "from": "goxhill",
+          "to": "thornton_abbey",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "thornton_abbey_ulceby",
+          "from": "thornton_abbey",
+          "to": "ulceby",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "ulceby_habrough",
+          "from": "ulceby",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "habrough_stallingborough",
+          "from": "habrough",
+          "to": "stallingborough",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "stallingborough_healing",
+          "from": "stallingborough",
+          "to": "healing",
+          "scheduled_runtime_minutes": 2,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "healing_great_coates",
+          "from": "healing",
+          "to": "great_coates",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "great_coates_grimsby_town",
+          "from": "great_coates",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_town_grimsby_docks_barton_return",
+          "from": "grimsby_town",
+          "to": "grimsby_docks",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "grimsby_docks_new_clee_barton_return",
+          "from": "grimsby_docks",
+          "to": "new_clee",
+          "scheduled_runtime_minutes": 2,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "new_clee_cleethorpes_barton_return",
+          "from": "new_clee",
+          "to": "cleethorpes",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from typical visible EMR Barton branch timings in the uploaded screenshots.",
+        "Only source columns marked EM or EM* should be transcribed onto this route.",
+        "Columns marked TP or NT in the EMR screenshots are excluded from this East Midlands Railway route."
+      ]
     }
   ]
 }
