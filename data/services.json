@@ -645,6 +645,1165 @@
         {"station_id": "grimsby_town", "departure": "23:54"},
         {"station_id": "cleethorpes", "arrival": "00:05", "arrival_day_offset": 1}
       ]
+    },
+    {
+      "id": "tpe-cledonc-sat-0505",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": ["A"],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "05:05"},
+        {"station_id": "grimsby_town", "departure": "05:13"},
+        {"station_id": "habrough", "departure": "05:23"},
+        {"station_id": "barnetby", "departure": "05:32"},
+        {"station_id": "scunthorpe", "arrival": "05:47", "departure": "05:47"},
+        {"station_id": "doncaster", "arrival": "06:24"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-0622",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "06:22"},
+        {"station_id": "grimsby_town", "departure": "06:30"},
+        {"station_id": "habrough", "departure": "06:40"},
+        {"station_id": "barnetby", "departure": "06:49"},
+        {"station_id": "scunthorpe", "arrival": "07:04", "departure": "07:04"},
+        {"station_id": "doncaster", "arrival": "07:35"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-0726",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "07:26"},
+        {"station_id": "grimsby_town", "departure": "07:34"},
+        {"station_id": "habrough", "departure": "07:44"},
+        {"station_id": "barnetby", "departure": "07:53"},
+        {"station_id": "scunthorpe", "arrival": "08:08", "departure": "08:08"},
+        {"station_id": "doncaster", "arrival": "08:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-0826",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "08:26"},
+        {"station_id": "grimsby_town", "departure": "08:34"},
+        {"station_id": "habrough", "departure": "08:44"},
+        {"station_id": "barnetby", "departure": "08:53"},
+        {"station_id": "scunthorpe", "arrival": "09:08", "departure": "09:08"},
+        {"station_id": "doncaster", "arrival": "09:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-0926",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "09:26"},
+        {"station_id": "grimsby_town", "departure": "09:34"},
+        {"station_id": "habrough", "departure": "09:44"},
+        {"station_id": "barnetby", "departure": "09:53"},
+        {"station_id": "scunthorpe", "arrival": "10:08", "departure": "10:08"},
+        {"station_id": "doncaster", "arrival": "10:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1026",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "10:26"},
+        {"station_id": "grimsby_town", "departure": "10:34"},
+        {"station_id": "habrough", "departure": "10:44"},
+        {"station_id": "barnetby", "departure": "10:53"},
+        {"station_id": "scunthorpe", "arrival": "11:08", "departure": "11:08"},
+        {"station_id": "doncaster", "arrival": "11:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1126",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "11:26"},
+        {"station_id": "grimsby_town", "departure": "11:34"},
+        {"station_id": "habrough", "departure": "11:44"},
+        {"station_id": "barnetby", "departure": "11:53"},
+        {"station_id": "scunthorpe", "arrival": "12:08", "departure": "12:08"},
+        {"station_id": "doncaster", "arrival": "12:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1226",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "12:26"},
+        {"station_id": "grimsby_town", "departure": "12:34"},
+        {"station_id": "habrough", "departure": "12:44"},
+        {"station_id": "barnetby", "departure": "12:53"},
+        {"station_id": "scunthorpe", "arrival": "13:08", "departure": "13:08"},
+        {"station_id": "doncaster", "arrival": "13:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1326",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "13:26"},
+        {"station_id": "grimsby_town", "departure": "13:34"},
+        {"station_id": "habrough", "departure": "13:44"},
+        {"station_id": "barnetby", "departure": "13:53"},
+        {"station_id": "scunthorpe", "arrival": "14:08", "departure": "14:08"},
+        {"station_id": "doncaster", "arrival": "14:36"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1426",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "14:26"},
+        {"station_id": "grimsby_town", "departure": "14:34"},
+        {"station_id": "habrough", "departure": "14:44"},
+        {"station_id": "barnetby", "departure": "14:53"},
+        {"station_id": "scunthorpe", "arrival": "15:08", "departure": "15:08"},
+        {"station_id": "doncaster", "arrival": "15:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1526",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "15:26"},
+        {"station_id": "grimsby_town", "departure": "15:34"},
+        {"station_id": "habrough", "departure": "15:44"},
+        {"station_id": "barnetby", "departure": "15:53"},
+        {"station_id": "scunthorpe", "arrival": "16:08", "departure": "16:08"},
+        {"station_id": "doncaster", "arrival": "16:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1626",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "16:26"},
+        {"station_id": "grimsby_town", "departure": "16:34"},
+        {"station_id": "habrough", "departure": "16:44"},
+        {"station_id": "barnetby", "departure": "16:53"},
+        {"station_id": "scunthorpe", "arrival": "17:08", "departure": "17:08"},
+        {"station_id": "doncaster", "arrival": "17:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1726",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "17:26"},
+        {"station_id": "grimsby_town", "departure": "17:34"},
+        {"station_id": "habrough", "departure": "17:44"},
+        {"station_id": "barnetby", "departure": "17:53"},
+        {"station_id": "scunthorpe", "arrival": "18:08", "departure": "18:08"},
+        {"station_id": "doncaster", "arrival": "18:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1826",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "18:26"},
+        {"station_id": "grimsby_town", "departure": "18:34"},
+        {"station_id": "habrough", "departure": "18:44"},
+        {"station_id": "barnetby", "departure": "18:53"},
+        {"station_id": "scunthorpe", "arrival": "19:08", "departure": "19:08"},
+        {"station_id": "doncaster", "arrival": "19:39"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-1926",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "19:26"},
+        {"station_id": "grimsby_town", "departure": "19:33"},
+        {"station_id": "habrough", "departure": "19:44"},
+        {"station_id": "barnetby", "departure": "19:52"},
+        {"station_id": "scunthorpe", "arrival": "20:07", "departure": "20:08"},
+        {"station_id": "doncaster", "arrival": "20:36"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-2026",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "20:26"},
+        {"station_id": "grimsby_town", "departure": "20:34"},
+        {"station_id": "habrough", "departure": "20:44"},
+        {"station_id": "barnetby", "departure": "20:53"},
+        {"station_id": "scunthorpe", "arrival": "21:08", "departure": "21:08"},
+        {"station_id": "doncaster", "arrival": "21:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sat-2126",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sat",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "21:26"},
+        {"station_id": "grimsby_town", "departure": "21:34"},
+        {"station_id": "habrough", "departure": "21:44"},
+        {"station_id": "barnetby", "departure": "21:53"},
+        {"station_id": "scunthorpe", "arrival": "22:08", "departure": "22:08"},
+        {"station_id": "doncaster", "arrival": "22:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-0926",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "09:26"},
+        {"station_id": "grimsby_town", "departure": "09:34"},
+        {"station_id": "habrough", "departure": "09:44"},
+        {"station_id": "barnetby", "departure": "09:55"},
+        {"station_id": "scunthorpe", "arrival": "10:09", "departure": "10:09"},
+        {"station_id": "doncaster", "arrival": "10:38"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1026",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "10:26"},
+        {"station_id": "grimsby_town", "departure": "10:34"},
+        {"station_id": "habrough", "departure": "10:44"},
+        {"station_id": "barnetby", "departure": "10:55"},
+        {"station_id": "scunthorpe", "arrival": "11:08", "departure": "11:08"},
+        {"station_id": "doncaster", "arrival": "11:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1126",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "11:26"},
+        {"station_id": "grimsby_town", "departure": "11:34"},
+        {"station_id": "habrough", "departure": "11:44"},
+        {"station_id": "barnetby", "departure": "11:55"},
+        {"station_id": "scunthorpe", "arrival": "12:08", "departure": "12:08"},
+        {"station_id": "doncaster", "arrival": "12:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1225",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "12:25"},
+        {"station_id": "grimsby_town", "departure": "12:33"},
+        {"station_id": "habrough", "departure": "12:43"},
+        {"station_id": "barnetby", "departure": "12:52"},
+        {"station_id": "scunthorpe", "arrival": "13:07", "departure": "13:07"},
+        {"station_id": "doncaster", "arrival": "13:36"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1326",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "13:26"},
+        {"station_id": "grimsby_town", "departure": "13:34"},
+        {"station_id": "habrough", "departure": "13:44"},
+        {"station_id": "barnetby", "departure": "13:55"},
+        {"station_id": "scunthorpe", "arrival": "14:08", "departure": "14:08"},
+        {"station_id": "doncaster", "arrival": "14:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1425",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "14:25"},
+        {"station_id": "grimsby_town", "departure": "14:33"},
+        {"station_id": "habrough", "departure": "14:43"},
+        {"station_id": "barnetby", "departure": "14:52"},
+        {"station_id": "scunthorpe", "arrival": "15:07", "departure": "15:07"},
+        {"station_id": "doncaster", "arrival": "15:36"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1526",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "15:26"},
+        {"station_id": "grimsby_town", "departure": "15:34"},
+        {"station_id": "habrough", "departure": "15:44"},
+        {"station_id": "barnetby", "departure": "15:55"},
+        {"station_id": "scunthorpe", "arrival": "16:08", "departure": "16:08"},
+        {"station_id": "doncaster", "arrival": "16:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1626",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "16:26"},
+        {"station_id": "grimsby_town", "departure": "16:34"},
+        {"station_id": "habrough", "departure": "16:44"},
+        {"station_id": "barnetby", "departure": "16:55"},
+        {"station_id": "scunthorpe", "arrival": "17:08", "departure": "17:08"},
+        {"station_id": "doncaster", "arrival": "17:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1726",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "17:26"},
+        {"station_id": "grimsby_town", "departure": "17:34"},
+        {"station_id": "habrough", "departure": "17:44"},
+        {"station_id": "barnetby", "departure": "17:55"},
+        {"station_id": "scunthorpe", "arrival": "18:08", "departure": "18:08"},
+        {"station_id": "doncaster", "arrival": "18:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1826",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "18:26"},
+        {"station_id": "grimsby_town", "departure": "18:34"},
+        {"station_id": "habrough", "departure": "18:45"},
+        {"station_id": "barnetby", "departure": "18:55"},
+        {"station_id": "scunthorpe", "arrival": "19:08", "departure": "19:09"},
+        {"station_id": "doncaster", "arrival": "19:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-1925",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "19:25"},
+        {"station_id": "grimsby_town", "departure": "19:33"},
+        {"station_id": "habrough", "departure": "19:43"},
+        {"station_id": "barnetby", "departure": "19:52"},
+        {"station_id": "scunthorpe", "arrival": "20:07", "departure": "20:07"},
+        {"station_id": "doncaster", "arrival": "20:36"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-2026",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "20:26"},
+        {"station_id": "grimsby_town", "departure": "20:34"},
+        {"station_id": "habrough", "departure": "20:44"},
+        {"station_id": "barnetby", "departure": "20:55"},
+        {"station_id": "scunthorpe", "arrival": "21:08", "departure": "21:08"},
+        {"station_id": "doncaster", "arrival": "21:37"}
+      ]
+    },
+    {
+      "id": "tpe-cledonc-sun-2126",
+      "operator": "TransPennine Express",
+      "route_id": "cleethorpes_to_doncaster",
+      "source_id": "tpe-cleethorpes-doncaster-sun",
+      "direction": "cleethorpes_to_doncaster",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "21:26"},
+        {"station_id": "grimsby_town", "departure": "21:34"},
+        {"station_id": "habrough", "departure": "21:44"},
+        {"station_id": "barnetby", "departure": "21:53"},
+        {"station_id": "scunthorpe", "arrival": "22:08", "departure": "22:08"},
+        {"station_id": "doncaster", "arrival": "22:40"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-0638",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "06:38"},
+        {"station_id": "scunthorpe", "arrival": "07:05", "departure": "07:05"},
+        {"station_id": "barnetby", "departure": "07:20"},
+        {"station_id": "habrough", "departure": "07:28"},
+        {"station_id": "grimsby_town", "departure": "07:43"},
+        {"station_id": "cleethorpes", "arrival": "07:52"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-0737",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "07:37"},
+        {"station_id": "scunthorpe", "arrival": "08:03", "departure": "08:04"},
+        {"station_id": "barnetby", "departure": "08:18"},
+        {"station_id": "habrough", "departure": "08:27"},
+        {"station_id": "grimsby_town", "departure": "08:41"},
+        {"station_id": "cleethorpes", "arrival": "08:50"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-0841",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "08:41"},
+        {"station_id": "scunthorpe", "arrival": "09:07", "departure": "09:08"},
+        {"station_id": "barnetby", "departure": "09:22"},
+        {"station_id": "habrough", "departure": "09:31"},
+        {"station_id": "grimsby_town", "departure": "09:44"},
+        {"station_id": "cleethorpes", "arrival": "09:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-0941",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "09:41"},
+        {"station_id": "scunthorpe", "arrival": "10:07", "departure": "10:08"},
+        {"station_id": "barnetby", "departure": "10:22"},
+        {"station_id": "habrough", "departure": "10:31"},
+        {"station_id": "grimsby_town", "departure": "10:44"},
+        {"station_id": "cleethorpes", "arrival": "10:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1041",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "10:41"},
+        {"station_id": "scunthorpe", "arrival": "11:07", "departure": "11:08"},
+        {"station_id": "barnetby", "departure": "11:22"},
+        {"station_id": "habrough", "departure": "11:31"},
+        {"station_id": "grimsby_town", "departure": "11:44"},
+        {"station_id": "cleethorpes", "arrival": "11:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1141",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "11:41"},
+        {"station_id": "scunthorpe", "arrival": "12:07", "departure": "12:08"},
+        {"station_id": "barnetby", "departure": "12:22"},
+        {"station_id": "habrough", "departure": "12:31"},
+        {"station_id": "grimsby_town", "departure": "12:44"},
+        {"station_id": "cleethorpes", "arrival": "12:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1241",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "12:41"},
+        {"station_id": "scunthorpe", "arrival": "13:07", "departure": "13:08"},
+        {"station_id": "barnetby", "departure": "13:22"},
+        {"station_id": "habrough", "departure": "13:31"},
+        {"station_id": "grimsby_town", "departure": "13:44"},
+        {"station_id": "cleethorpes", "arrival": "13:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1341",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "13:41"},
+        {"station_id": "scunthorpe", "arrival": "14:07", "departure": "14:08"},
+        {"station_id": "barnetby", "departure": "14:22"},
+        {"station_id": "habrough", "departure": "14:31"},
+        {"station_id": "grimsby_town", "departure": "14:44"},
+        {"station_id": "cleethorpes", "arrival": "14:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1441",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "14:41"},
+        {"station_id": "scunthorpe", "arrival": "15:07", "departure": "15:08"},
+        {"station_id": "barnetby", "departure": "15:22"},
+        {"station_id": "habrough", "departure": "15:31"},
+        {"station_id": "grimsby_town", "departure": "15:44"},
+        {"station_id": "cleethorpes", "arrival": "15:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1537",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "15:37"},
+        {"station_id": "scunthorpe", "arrival": "16:06", "departure": "16:07"},
+        {"station_id": "barnetby", "departure": "16:21"},
+        {"station_id": "habrough", "departure": "16:30"},
+        {"station_id": "grimsby_town", "departure": "16:43"},
+        {"station_id": "cleethorpes", "arrival": "16:52"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1641",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "16:41"},
+        {"station_id": "scunthorpe", "arrival": "17:07", "departure": "17:08"},
+        {"station_id": "barnetby", "departure": "17:22"},
+        {"station_id": "habrough", "departure": "17:31"},
+        {"station_id": "grimsby_town", "departure": "17:44"},
+        {"station_id": "cleethorpes", "arrival": "17:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1741",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "17:41"},
+        {"station_id": "scunthorpe", "arrival": "18:07", "departure": "18:08"},
+        {"station_id": "barnetby", "departure": "18:22"},
+        {"station_id": "habrough", "departure": "18:31"},
+        {"station_id": "grimsby_town", "departure": "18:44"},
+        {"station_id": "cleethorpes", "arrival": "18:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1841",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "18:41"},
+        {"station_id": "scunthorpe", "arrival": "19:07", "departure": "19:08"},
+        {"station_id": "barnetby", "departure": "19:22"},
+        {"station_id": "habrough", "departure": "19:31"},
+        {"station_id": "grimsby_town", "departure": "19:44"},
+        {"station_id": "cleethorpes", "arrival": "19:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-1941",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "19:41"},
+        {"station_id": "scunthorpe", "arrival": "20:07", "departure": "20:08"},
+        {"station_id": "barnetby", "departure": "20:22"},
+        {"station_id": "habrough", "departure": "20:31"},
+        {"station_id": "grimsby_town", "departure": "20:44"},
+        {"station_id": "cleethorpes", "arrival": "20:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-2040",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "20:40"},
+        {"station_id": "scunthorpe", "arrival": "21:07", "departure": "21:08"},
+        {"station_id": "barnetby", "departure": "21:22"},
+        {"station_id": "habrough", "departure": "21:31"},
+        {"station_id": "grimsby_town", "departure": "21:44"},
+        {"station_id": "cleethorpes", "arrival": "21:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-2141",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "21:41"},
+        {"station_id": "scunthorpe", "arrival": "22:07", "departure": "22:08"},
+        {"station_id": "barnetby", "departure": "22:22"},
+        {"station_id": "habrough", "departure": "22:31"},
+        {"station_id": "grimsby_town", "departure": "22:44"},
+        {"station_id": "cleethorpes", "arrival": "22:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sat-2238",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sat",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["saturday"],
+      "footnote_codes": ["A"],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "22:38"},
+        {"station_id": "scunthorpe", "arrival": "23:13", "departure": "23:13"},
+        {"station_id": "barnetby", "departure": "23:28"},
+        {"station_id": "habrough", "departure": "23:36"},
+        {"station_id": "grimsby_town", "departure": "23:50"},
+        {"station_id": "cleethorpes", "arrival": "23:59"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-0943",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "09:43"},
+        {"station_id": "scunthorpe", "arrival": "10:09", "departure": "10:10"},
+        {"station_id": "barnetby", "departure": "10:24"},
+        {"station_id": "habrough", "departure": "10:33"},
+        {"station_id": "grimsby_town", "departure": "10:46"},
+        {"station_id": "cleethorpes", "arrival": "10:55"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1041",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "10:41"},
+        {"station_id": "scunthorpe", "arrival": "11:07", "departure": "11:08"},
+        {"station_id": "barnetby", "departure": "11:22"},
+        {"station_id": "habrough", "departure": "11:31"},
+        {"station_id": "grimsby_town", "departure": "11:44"},
+        {"station_id": "cleethorpes", "arrival": "11:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1141",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "11:41"},
+        {"station_id": "scunthorpe", "arrival": "12:07", "departure": "12:08"},
+        {"station_id": "barnetby", "departure": "12:22"},
+        {"station_id": "habrough", "departure": "12:31"},
+        {"station_id": "grimsby_town", "departure": "12:44"},
+        {"station_id": "cleethorpes", "arrival": "12:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1240",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "12:40"},
+        {"station_id": "scunthorpe", "arrival": "13:07", "departure": "13:08"},
+        {"station_id": "barnetby", "departure": "13:23"},
+        {"station_id": "habrough", "departure": "13:32"},
+        {"station_id": "grimsby_town", "departure": "13:45"},
+        {"station_id": "cleethorpes", "arrival": "13:54"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1340",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "13:40"},
+        {"station_id": "scunthorpe", "arrival": "14:07", "departure": "14:08"},
+        {"station_id": "barnetby", "departure": "14:22"},
+        {"station_id": "habrough", "departure": "14:31"},
+        {"station_id": "grimsby_town", "departure": "14:44"},
+        {"station_id": "cleethorpes", "arrival": "14:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1440",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "14:40"},
+        {"station_id": "scunthorpe", "arrival": "15:07", "departure": "15:08"},
+        {"station_id": "barnetby", "departure": "15:23"},
+        {"station_id": "habrough", "departure": "15:32"},
+        {"station_id": "grimsby_town", "departure": "15:43"},
+        {"station_id": "cleethorpes", "arrival": "15:54"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1540",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "15:40"},
+        {"station_id": "scunthorpe", "arrival": "16:06", "departure": "16:07"},
+        {"station_id": "barnetby", "departure": "16:22"},
+        {"station_id": "habrough", "departure": "16:31"},
+        {"station_id": "grimsby_town", "departure": "16:45"},
+        {"station_id": "cleethorpes", "arrival": "16:54"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1640",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "16:40"},
+        {"station_id": "scunthorpe", "arrival": "17:07", "departure": "17:08"},
+        {"station_id": "barnetby", "departure": "17:23"},
+        {"station_id": "habrough", "departure": "17:32"},
+        {"station_id": "grimsby_town", "departure": "17:45"},
+        {"station_id": "cleethorpes", "arrival": "17:55"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1740",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "17:40"},
+        {"station_id": "scunthorpe", "arrival": "18:07", "departure": "18:08"},
+        {"station_id": "barnetby", "departure": "18:23"},
+        {"station_id": "habrough", "departure": "18:32"},
+        {"station_id": "grimsby_town", "departure": "18:45"},
+        {"station_id": "cleethorpes", "arrival": "18:54"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1841",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "18:41"},
+        {"station_id": "scunthorpe", "arrival": "19:07", "departure": "19:08"},
+        {"station_id": "barnetby", "departure": "19:23"},
+        {"station_id": "habrough", "departure": "19:32"},
+        {"station_id": "grimsby_town", "departure": "19:46"},
+        {"station_id": "cleethorpes", "arrival": "19:55"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-1941",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "19:41"},
+        {"station_id": "scunthorpe", "arrival": "20:07", "departure": "20:08"},
+        {"station_id": "barnetby", "departure": "20:22"},
+        {"station_id": "habrough", "departure": "20:31"},
+        {"station_id": "grimsby_town", "departure": "20:42"},
+        {"station_id": "cleethorpes", "arrival": "20:53"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-2040",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "20:40"},
+        {"station_id": "scunthorpe", "arrival": "21:07", "departure": "21:08"},
+        {"station_id": "barnetby", "departure": "21:23"},
+        {"station_id": "habrough", "departure": "21:32"},
+        {"station_id": "grimsby_town", "departure": "21:45"},
+        {"station_id": "cleethorpes", "arrival": "21:54"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-2141",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "21:41"},
+        {"station_id": "scunthorpe", "arrival": "22:07", "departure": "22:08"},
+        {"station_id": "barnetby", "departure": "22:23"},
+        {"station_id": "habrough", "departure": "22:32"},
+        {"station_id": "grimsby_town", "departure": "22:46"},
+        {"station_id": "cleethorpes", "arrival": "22:55"}
+      ]
+    },
+    {
+      "id": "tpe-doncle-sun-2238",
+      "operator": "TransPennine Express",
+      "route_id": "doncaster_to_cleethorpes",
+      "source_id": "tpe-doncaster-cleethorpes-sun",
+      "direction": "doncaster_to_cleethorpes",
+      "service_days": ["sunday"],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "22:38"},
+        {"station_id": "scunthorpe", "arrival": "23:05", "departure": "23:06"},
+        {"station_id": "barnetby", "departure": "23:21"},
+        {"station_id": "habrough", "departure": "23:30"},
+        {"station_id": "grimsby_town", "departure": "23:44"},
+        {"station_id": "cleethorpes", "arrival": "23:53"}
+      ]
     }
   ]
 }
