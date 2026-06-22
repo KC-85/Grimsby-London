@@ -93,6 +93,192 @@
       "service_days": ["sunday"],
       "file": "data/raw/tpexpress/doncaster-cleethorpes-sun.png",
       "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-mf-1",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonmf.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services.",
+        "Columns marked TP belong to TransPennine Express and should not be duplicated from this source."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-mf-2",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonmf2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-sat-1",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["saturday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonsat.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-sat-2",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["saturday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonsat2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-sun-1",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["sunday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonsun.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services.",
+        "Columns marked EM* should be treated as East Midlands Railway columns while preserving the star in service footnotes if needed."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-cleethorpes-lincoln-barton-sun-2",
+      "operator": "East Midlands Railway",
+      "title": "Cleethorpes to Lincoln and Barton-on-Humber",
+      "direction": "cleethorpes_to_lincoln_barton",
+      "service_days": ["sunday"],
+      "file": "data/raw/emr/cleethorpes-lincolnbartonsun2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-mf-1",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpesmf.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services.",
+        "Columns marked TP belong to TransPennine Express and should not be duplicated from this source."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-mf-2",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpesmf2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-mf-3",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpesmf3.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Late continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-sat-1",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["saturday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpessat.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-sat-2",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["saturday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpessat2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-sun-1",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["sunday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpessun.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Only columns marked EM or EM* should be transcribed as East Midlands Railway services.",
+        "Columns marked EM* should be treated as East Midlands Railway columns while preserving the star in service footnotes if needed."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "emr-lincoln-barton-cleethorpes-sun-2",
+      "operator": "East Midlands Railway",
+      "title": "Lincoln and Barton-on-Humber to Cleethorpes",
+      "direction": "lincoln_barton_to_cleethorpes",
+      "service_days": ["sunday"],
+      "file": "data/raw/emr/lincolnbarton-cleethorpessun2.png",
+      "operator_column_codes": ["EM", "EM*"],
+      "excluded_operator_column_codes": ["TP", "NT"],
+      "transcription_notes": [
+        "Late continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
+      ],
+      "footnotes": []
     }
   ]
 }
