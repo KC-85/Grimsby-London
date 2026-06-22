@@ -4,25 +4,103 @@
       "id": "cleethorpes",
       "name": "Cleethorpes",
       "crs": "CLE",
-      "tags": ["core_corridor", "tpe_source"]
+      "tags": ["core_corridor", "tpe_source", "emr_source"]
+    },
+    {
+      "id": "new_clee",
+      "name": "New Clee",
+      "crs": "NCE",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "grimsby_docks",
+      "name": "Grimsby Docks",
+      "crs": "GMD",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
     },
     {
       "id": "grimsby_town",
       "name": "Grimsby Town",
       "crs": "GMB",
-      "tags": ["core_corridor", "tpe_source"]
+      "tags": ["core_corridor", "tpe_source", "emr_source"]
+    },
+    {
+      "id": "great_coates",
+      "name": "Great Coates",
+      "crs": "GCT",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "healing",
+      "name": "Healing",
+      "crs": "HLI",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "stallingborough",
+      "name": "Stallingborough",
+      "crs": "SLL",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
     },
     {
       "id": "habrough",
       "name": "Habrough",
       "crs": "HAB",
-      "tags": ["core_corridor", "tpe_source"]
+      "tags": ["core_corridor", "tpe_source", "emr_source"]
+    },
+    {
+      "id": "ulceby",
+      "name": "Ulceby",
+      "crs": "ULC",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "thornton_abbey",
+      "name": "Thornton Abbey",
+      "crs": "TNA",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "goxhill",
+      "name": "Goxhill",
+      "crs": "GOX",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "new_holland",
+      "name": "New Holland",
+      "crs": "NHL",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "barrow_haven",
+      "name": "Barrow Haven",
+      "crs": "BAV",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
+    },
+    {
+      "id": "barton_on_humber",
+      "name": "Barton-on-Humber",
+      "crs": "BAU",
+      "tags": ["emr_source", "cleethorpes_barton_branch"]
     },
     {
       "id": "barnetby",
       "name": "Barnetby",
       "crs": "BTB",
-      "tags": ["core_corridor", "tpe_source"]
+      "tags": ["core_corridor", "tpe_source", "emr_source", "lincoln_route"]
+    },
+    {
+      "id": "market_rasen",
+      "name": "Market Rasen",
+      "crs": "MKR",
+      "tags": ["emr_source", "lincoln_route"]
+    },
+    {
+      "id": "lincoln",
+      "name": "Lincoln",
+      "crs": "LCN",
+      "tags": ["emr_source", "lincoln_route"]
     },
     {
       "id": "scunthorpe",
