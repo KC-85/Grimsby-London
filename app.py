@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
@@ -7,8 +9,20 @@ from simulation.infrastructure import load_infrastructure, station_lookup
 from simulation.timetable import flatten_services, load_services
 
 
+DATA_PATHS = (
+    Path("data/services.json"),
+    Path("data/stations.json"),
+    Path("data/routes.json"),
+    Path("data/sources.json"),
+)
+
+
+def data_file_signature() -> tuple[tuple[str, int, int], ...]:
+    return tuple((str(path), path.stat().st_mtime_ns, path.stat().st_size) for path in DATA_PATHS)
+
+
 @st.cache_data
-def load_app_data():
+def load_app_data(data_signature):
     infrastructure = load_infrastructure()
     services = load_services()
     return infrastructure, services
@@ -71,7 +85,12 @@ def main() -> None:
     st.set_page_config(page_title="Grimsby-London Rail Simulation", layout="wide")
     st.title("Grimsby-London Rail Simulation")
 
-    infrastructure, services = load_app_data()
+    st.sidebar.header("Data")
+    if st.sidebar.button("Reload data"):
+        st.cache_data.clear()
+        st.rerun()
+
+    infrastructure, services = load_app_data(data_file_signature())
     stations_by_id = station_lookup(infrastructure.stations)
     df = build_timetable_dataframe(services, stations_by_id)
     filtered_df = render_sidebar(df)
