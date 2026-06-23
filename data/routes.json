@@ -188,6 +188,9 @@
         "new_clee",
         "grimsby_docks",
         "grimsby_town",
+        "great_coates",
+        "healing",
+        "stallingborough",
         "habrough",
         "barnetby",
         "market_rasen",
@@ -216,10 +219,31 @@
           "capacity_model": "single_occupancy_assumption"
         },
         {
-          "id": "grimsby_town_habrough_emr",
+          "id": "grimsby_town_great_coates_lincoln",
           "from": "grimsby_town",
+          "to": "great_coates",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "great_coates_healing_lincoln",
+          "from": "great_coates",
+          "to": "healing",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "healing_stallingborough_lincoln",
+          "from": "healing",
+          "to": "stallingborough",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "stallingborough_habrough_lincoln",
+          "from": "stallingborough",
           "to": "habrough",
-          "scheduled_runtime_minutes": 10,
+          "scheduled_runtime_minutes": 6,
           "capacity_model": "single_occupancy_assumption"
         },
         {
@@ -272,6 +296,9 @@
         "market_rasen",
         "barnetby",
         "habrough",
+        "stallingborough",
+        "healing",
+        "great_coates",
         "grimsby_town",
         "grimsby_docks",
         "new_clee",
@@ -300,10 +327,31 @@
           "capacity_model": "single_occupancy_assumption"
         },
         {
-          "id": "habrough_grimsby_town_emr",
+          "id": "habrough_stallingborough_lincoln",
           "from": "habrough",
+          "to": "stallingborough",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "stallingborough_healing_lincoln",
+          "from": "stallingborough",
+          "to": "healing",
+          "scheduled_runtime_minutes": 2,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "healing_great_coates_lincoln",
+          "from": "healing",
+          "to": "great_coates",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "great_coates_grimsby_town_lincoln",
+          "from": "great_coates",
           "to": "grimsby_town",
-          "scheduled_runtime_minutes": 9,
+          "scheduled_runtime_minutes": 6,
           "capacity_model": "single_occupancy_assumption"
         },
         {
