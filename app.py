@@ -11,7 +11,7 @@ from simulation.disruption import (
     ServiceDelay,
 )
 from simulation.engine import SimulationResult, run_simulation
-from simulation.infrastructure import load_infrastructure, station_lookup
+from simulation.infrastructure import load_infrastructure, route_lookup, station_lookup
 from simulation.metrics import (
     calculate_metrics,
     conflicts_by_day,
@@ -44,22 +44,29 @@ def load_app_data(data_signature):
 def build_timetable_dataframe(
     services: list[Service],
     stations_by_id,
+    routes_by_id,
     service_status: dict[str, str] | None = None,
     service_delays: dict[str, int] | None = None,
 ) -> pd.DataFrame:
     rows = flatten_services(services)
     df = pd.DataFrame(rows)
     df["station"] = df["station_id"].map(lambda station_id: stations_by_id[station_id].name)
+    df["route"] = df["route_id"].map(lambda route_id: routes_by_id[route_id].name)
     df["service_label"] = df["service_id"].str.replace("tpe-", "", regex=False)
     df["status"] = df["service_id"].map(service_status or {}).fillna("scheduled")
     df["delay_minutes"] = df["service_id"].map(service_delays or {}).fillna(0).astype(int)
     return df
 
 
-def build_conflicts_dataframe(result: SimulationResult) -> pd.DataFrame:
+def section_label(section_key: str, stations_by_id) -> str:
+    station_ids = section_key.split("::")
+    return " to ".join(stations_by_id[station_id].name for station_id in station_ids)
+
+
+def build_conflicts_dataframe(result: SimulationResult, stations_by_id) -> pd.DataFrame:
     rows = [
         {
-            "section": conflict.section_key,
+            "section": section_label(conflict.section_key, stations_by_id),
             "first_service": conflict.first_service_id,
             "second_service": conflict.second_service_id,
             "days": ", ".join(conflict.service_days),
@@ -72,13 +79,12 @@ def build_conflicts_dataframe(result: SimulationResult) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def build_occupations_dataframe(result: SimulationResult, stations_by_id) -> pd.DataFrame:
+def build_occupations_dataframe(result: SimulationResult, stations_by_id, routes_by_id) -> pd.DataFrame:
     rows = [
         {
             "service_id": occupation.service_id,
             "operator": occupation.operator,
-            "route_id": occupation.route_id,
-            "direction": occupation.direction,
+            "route": routes_by_id[occupation.route_id].name,
             "from": stations_by_id[occupation.from_station].name,
             "to": stations_by_id[occupation.to_station].name,
             "enter": occupation.enter_time,
@@ -92,8 +98,14 @@ def build_occupations_dataframe(result: SimulationResult, stations_by_id) -> pd.
     return pd.DataFrame(rows)
 
 
-def build_breakdown_dataframe(items) -> pd.DataFrame:
-    return pd.DataFrame([item.model_dump() for item in items])
+def build_breakdown_dataframe(items, label_map: dict[str, str] | None = None) -> pd.DataFrame:
+    rows = []
+    for item in items:
+        row = item.model_dump()
+        if label_map is not None:
+            row["label"] = label_map.get(row["label"], row["label"])
+        rows.append(row)
+    return pd.DataFrame(rows)
 
 
 def service_option_label(service: Service, stations_by_id) -> str:
@@ -177,16 +189,19 @@ def render_filters(df: pd.DataFrame) -> pd.DataFrame:
     st.sidebar.header("Filters")
 
     days = sorted({day for value in df["service_days"] for day in value.split(", ")})
-    directions = sorted(df["direction"].unique())
+    operators = sorted(df["operator"].unique())
+    routes = sorted(df["route"].unique())
     statuses = sorted(df["status"].unique())
 
     selected_day = st.sidebar.selectbox("Day", days)
-    selected_direction = st.sidebar.selectbox("Direction", directions)
+    selected_operators = st.sidebar.multiselect("Operator", operators, default=operators)
+    selected_route = st.sidebar.selectbox("Route", routes)
     selected_statuses = st.sidebar.multiselect("Status", statuses, default=statuses)
 
     return df[
         df["service_days"].str.contains(selected_day, regex=False)
-        & (df["direction"] == selected_direction)
+        & df["operator"].isin(selected_operators)
+        & (df["route"] == selected_route)
         & df["status"].isin(selected_statuses)
     ]
 
@@ -213,7 +228,7 @@ def render_timetable(df: pd.DataFrame) -> None:
     display_columns = [
         "service_label",
         "operator",
-        "direction",
+        "route",
         "station",
         "arrival",
         "departure",
@@ -245,17 +260,31 @@ def render_occupations(df: pd.DataFrame) -> None:
     st.dataframe(df, use_container_width=True, hide_index=True)
 
 
-def render_breakdowns(result: SimulationResult) -> None:
+def render_breakdowns(result: SimulationResult, stations_by_id, routes_by_id) -> None:
+    route_labels = {route_id: route.name for route_id, route in routes_by_id.items()}
+    section_labels = {
+        item.label: section_label(item.label, stations_by_id)
+        for item in conflicts_by_section(result)
+    }
+
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("Services By Operator")
         st.dataframe(build_breakdown_dataframe(services_by_operator(result)), use_container_width=True, hide_index=True)
         st.subheader("Conflicts By Section")
-        st.dataframe(build_breakdown_dataframe(conflicts_by_section(result)), use_container_width=True, hide_index=True)
+        st.dataframe(
+            build_breakdown_dataframe(conflicts_by_section(result), section_labels),
+            use_container_width=True,
+            hide_index=True,
+        )
 
     with col2:
         st.subheader("Services By Route")
-        st.dataframe(build_breakdown_dataframe(services_by_route(result)), use_container_width=True, hide_index=True)
+        st.dataframe(
+            build_breakdown_dataframe(services_by_route(result), route_labels),
+            use_container_width=True,
+            hide_index=True,
+        )
         st.subheader("Conflicts By Day")
         st.dataframe(build_breakdown_dataframe(conflicts_by_day(result)), use_container_width=True, hide_index=True)
 
@@ -271,6 +300,7 @@ def main() -> None:
 
     infrastructure, services = load_app_data(data_file_signature())
     stations_by_id = station_lookup(infrastructure.stations)
+    routes_by_id = route_lookup(infrastructure.routes)
     disruptions = render_disruption_controls(services, stations_by_id)
     simulation_result = run_simulation(services, infrastructure, disruptions)
 
@@ -291,12 +321,13 @@ def main() -> None:
     df = build_timetable_dataframe(
         simulated_services,
         stations_by_id,
+        routes_by_id,
         service_status=service_status,
         service_delays=service_delays,
     )
     filtered_df = render_filters(df)
-    conflicts_df = build_conflicts_dataframe(simulation_result)
-    occupations_df = build_occupations_dataframe(simulation_result, stations_by_id)
+    conflicts_df = build_conflicts_dataframe(simulation_result, stations_by_id)
+    occupations_df = build_occupations_dataframe(simulation_result, stations_by_id, routes_by_id)
 
     render_metric_cards(simulation_result)
 
@@ -310,7 +341,7 @@ def main() -> None:
     with occupations_tab:
         render_occupations(occupations_df)
     with metrics_tab:
-        render_breakdowns(simulation_result)
+        render_breakdowns(simulation_result, stations_by_id, routes_by_id)
 
 
 if __name__ == "__main__":
