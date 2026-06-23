@@ -279,6 +279,275 @@
         "Late continuation page; only columns marked EM or EM* should be transcribed as East Midlands Railway services."
       ],
       "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-mfs-1",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-mfs.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": [
+        {"code": "B", "text": "To Birmingham New Street or beyond"},
+        {"code": "L", "text": "To Liverpool Lime Street"},
+        {"code": "SO", "text": "Saturdays only"},
+        {"code": "SX", "text": "Mondays to Fridays only"},
+        {"code": "TP", "text": "Service operated by TransPennine Express"},
+        {"code": "XC", "text": "Service operated by CrossCountry"}
+      ]
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-mfs-2",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-mfs2.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-mfs-3",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-mfs3.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-mfs-4",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-mfs4.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-mfs-5",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-mfs5.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Late continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-sun-1",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-sun.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": [
+        {"code": "B", "text": "To Birmingham New Street or beyond"},
+        {"code": "H", "text": "To Manchester Piccadilly"},
+        {"code": "L", "text": "To Liverpool Lime Street"},
+        {"code": "TP", "text": "Service operated by TransPennine Express"},
+        {"code": "XC", "text": "Service operated by CrossCountry"}
+      ]
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-sun-2",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-sun2.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-scunthorpe-adwick-sheffield-sun-3",
+      "operator": "Northern",
+      "title": "Scunthorpe and Adwick to Sheffield",
+      "direction": "scunthorpe_adwick_to_sheffield",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/scunthorpe-adwick-sheffield-sun3.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Late continuation page; only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-mfs-1",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-mfs.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": [
+        {"code": "a", "text": "Arrival time"},
+        {"code": "A", "text": "To Leeds"},
+        {"code": "C", "text": "To Cleethorpes"},
+        {"code": "E", "text": "To York"},
+        {"code": "F", "text": "To Newcastle"},
+        {"code": "G", "text": "To Goole or beyond"},
+        {"code": "MO", "text": "Mondays only"},
+        {"code": "MSX", "text": "Tuesdays to Fridays only"},
+        {"code": "SO", "text": "Saturdays only"},
+        {"code": "SX", "text": "Mondays to Fridays only"},
+        {"code": "TP", "text": "Service operated by TransPennine Express"},
+        {"code": "XC", "text": "Service operated by CrossCountry"}
+      ]
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-mfs-2",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-mfs2.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-mfs-3",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-mfs3.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-mfs-4",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-mfs4.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-mfs-5",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-mfs5.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Late continuation page; only unmarked operator columns should be transcribed as Northern services.",
+        "MO services run on Mondays only; MSX services run Tuesdays to Fridays only.",
+        "SO services run on Saturdays only; SX services run Mondays to Fridays only."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-sun-1",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-sun.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": [
+        {"code": "a", "text": "Arrival time"},
+        {"code": "A", "text": "To Leeds"},
+        {"code": "C", "text": "To Cleethorpes"},
+        {"code": "F", "text": "To Newcastle"},
+        {"code": "G", "text": "To Goole or beyond"},
+        {"code": "TP", "text": "Service operated by TransPennine Express"},
+        {"code": "XC", "text": "Service operated by CrossCountry"}
+      ]
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-sun-2",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-sun2.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Continuation page; only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "northern-sheffield-adwick-scunthorpe-sun-3",
+      "operator": "Northern",
+      "title": "Sheffield to Adwick and Scunthorpe",
+      "direction": "sheffield_to_adwick_scunthorpe",
+      "service_days": ["sunday"],
+      "file": "data/raw/northern/sheffield-adwick-scunthorpe-sun3.png",
+      "operator_column_codes": ["unmarked"],
+      "excluded_operator_column_codes": ["TP", "XC"],
+      "transcription_notes": [
+        "Late continuation page; only unmarked operator columns should be transcribed as Northern services."
+      ],
+      "footnotes": []
     }
   ]
 }
