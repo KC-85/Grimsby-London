@@ -8446,6 +8446,820 @@
           "arrival": "20:05"
         }
       ]
+    },
+    {
+      "id": "northern-scudon-0748",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-1",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "07:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "07:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "08:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "08:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "08:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "08:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "08:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-0948",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-2",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "09:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "09:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "10:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "10:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "10:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "10:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "10:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-1248",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-2",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "12:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "12:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "13:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "13:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "13:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "13:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "13:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-1448",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-3",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "14:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "14:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "15:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "15:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "15:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "15:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "15:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-1648",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-3",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "16:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "16:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "17:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "17:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "17:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "17:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "17:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-1848",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-4",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "18:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "18:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "19:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "19:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "19:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "19:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "19:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-2048",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-5",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "20:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "20:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "21:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "21:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "21:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "21:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "21:30"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-2248-sx",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-5",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "footnote_codes": [
+        "SX"
+      ],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "22:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "22:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "23:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "23:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "23:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "23:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "23:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-scudon-2248-so",
+      "operator": "Northern",
+      "route_id": "scunthorpe_to_doncaster",
+      "source_id": "northern-scunthorpe-adwick-sheffield-mfs-5",
+      "direction": "scunthorpe_to_doncaster",
+      "service_days": [
+        "saturday"
+      ],
+      "footnote_codes": [
+        "SO"
+      ],
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "stops": [
+        {
+          "station_id": "scunthorpe",
+          "departure": "22:48"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "22:53"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "23:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "23:08"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "23:14"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "23:18"
+        },
+        {
+          "station_id": "doncaster",
+          "arrival": "23:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-0644",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-1",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "06:44"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "06:51"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "06:56"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "07:01"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "07:10"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "07:16"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "07:23"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-0848",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-1",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "08:48"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "08:55"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "09:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "09:05"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "09:14"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "09:20"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "09:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-1148",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-2",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "11:48"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "11:55"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "12:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "12:05"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "12:14"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "12:20"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "12:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-1348",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-3",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "13:48"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "13:55"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "14:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "14:05"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "14:14"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "14:20"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "14:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-1548",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-3",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "15:48"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "15:55"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "16:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "16:05"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "16:14"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "16:20"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "16:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-1747",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-4",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "17:47"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "17:54"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "17:59"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "18:04"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "18:13"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "18:19"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "18:26"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-1948",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-4",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "19:48"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "19:55"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "20:00"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "20:05"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "20:14"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "20:20"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "20:27"
+        }
+      ]
+    },
+    {
+      "id": "northern-donscu-2153",
+      "operator": "Northern",
+      "route_id": "doncaster_to_scunthorpe",
+      "source_id": "northern-sheffield-adwick-scunthorpe-mfs-5",
+      "direction": "doncaster_to_scunthorpe",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "footnote_codes": [],
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "stops": [
+        {
+          "station_id": "doncaster",
+          "departure": "21:53"
+        },
+        {
+          "station_id": "kirk_sandall",
+          "departure": "22:01"
+        },
+        {
+          "station_id": "hatfield_stainforth",
+          "departure": "22:06"
+        },
+        {
+          "station_id": "thorne_south",
+          "departure": "22:11"
+        },
+        {
+          "station_id": "crowle",
+          "departure": "22:20"
+        },
+        {
+          "station_id": "althorpe",
+          "departure": "22:26"
+        },
+        {
+          "station_id": "scunthorpe",
+          "arrival": "22:33"
+        }
+      ]
     }
   ]
 }

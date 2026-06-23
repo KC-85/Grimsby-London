@@ -645,6 +645,346 @@
         "Only source columns marked EM or EM* should be transcribed onto this route.",
         "Columns marked TP or NT in the EMR screenshots are excluded from this East Midlands Railway route."
       ]
+    },
+    {
+      "id": "scunthorpe_to_doncaster",
+      "name": "Scunthorpe to Doncaster",
+      "operator_scope": ["Northern"],
+      "source_ids": [
+        "northern-scunthorpe-adwick-sheffield-mfs-1",
+        "northern-scunthorpe-adwick-sheffield-mfs-2",
+        "northern-scunthorpe-adwick-sheffield-mfs-3",
+        "northern-scunthorpe-adwick-sheffield-mfs-4",
+        "northern-scunthorpe-adwick-sheffield-mfs-5",
+        "northern-scunthorpe-adwick-sheffield-sun-1",
+        "northern-scunthorpe-adwick-sheffield-sun-2",
+        "northern-scunthorpe-adwick-sheffield-sun-3"
+      ],
+      "direction": "scunthorpe_to_doncaster",
+      "origin": "scunthorpe",
+      "destination": "doncaster",
+      "core_station_sequence": [
+        "scunthorpe",
+        "althorpe",
+        "crowle",
+        "thorne_south",
+        "hatfield_stainforth",
+        "kirk_sandall",
+        "doncaster"
+      ],
+      "sections": [
+        {
+          "id": "scunthorpe_althorpe_northern",
+          "from": "scunthorpe",
+          "to": "althorpe",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "althorpe_crowle_northern",
+          "from": "althorpe",
+          "to": "crowle",
+          "scheduled_runtime_minutes": 7,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "crowle_thorne_south_northern",
+          "from": "crowle",
+          "to": "thorne_south",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "thorne_south_hatfield_stainforth_northern",
+          "from": "thorne_south",
+          "to": "hatfield_stainforth",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "hatfield_stainforth_kirk_sandall_northern",
+          "from": "hatfield_stainforth",
+          "to": "kirk_sandall",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "kirk_sandall_doncaster_northern",
+          "from": "kirk_sandall",
+          "to": "doncaster",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from representative Northern timings in the uploaded screenshots.",
+        "Only unmarked operator columns should be transcribed as Northern services; columns marked TP or XC are excluded.",
+        "Kirk Sandall is included in the physical route sequence even where a service passes without calling."
+      ]
+    },
+    {
+      "id": "doncaster_to_scunthorpe",
+      "name": "Doncaster to Scunthorpe",
+      "operator_scope": ["Northern"],
+      "source_ids": [
+        "northern-sheffield-adwick-scunthorpe-mfs-1",
+        "northern-sheffield-adwick-scunthorpe-mfs-2",
+        "northern-sheffield-adwick-scunthorpe-mfs-3",
+        "northern-sheffield-adwick-scunthorpe-mfs-4",
+        "northern-sheffield-adwick-scunthorpe-mfs-5",
+        "northern-sheffield-adwick-scunthorpe-sun-1",
+        "northern-sheffield-adwick-scunthorpe-sun-2",
+        "northern-sheffield-adwick-scunthorpe-sun-3"
+      ],
+      "direction": "doncaster_to_scunthorpe",
+      "origin": "doncaster",
+      "destination": "scunthorpe",
+      "core_station_sequence": [
+        "doncaster",
+        "kirk_sandall",
+        "hatfield_stainforth",
+        "thorne_south",
+        "crowle",
+        "althorpe",
+        "scunthorpe"
+      ],
+      "sections": [
+        {
+          "id": "doncaster_kirk_sandall_northern",
+          "from": "doncaster",
+          "to": "kirk_sandall",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "kirk_sandall_hatfield_stainforth_northern",
+          "from": "kirk_sandall",
+          "to": "hatfield_stainforth",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "hatfield_stainforth_thorne_south_northern",
+          "from": "hatfield_stainforth",
+          "to": "thorne_south",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "thorne_south_crowle_northern",
+          "from": "thorne_south",
+          "to": "crowle",
+          "scheduled_runtime_minutes": 9,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "crowle_althorpe_northern",
+          "from": "crowle",
+          "to": "althorpe",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "althorpe_scunthorpe_northern",
+          "from": "althorpe",
+          "to": "scunthorpe",
+          "scheduled_runtime_minutes": 7,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "Section runtimes are baseline values taken from representative Northern timings in the uploaded screenshots.",
+        "Only unmarked operator columns should be transcribed as Northern services; columns marked TP or XC are excluded.",
+        "Kirk Sandall is included in the physical route sequence even where a service passes without calling."
+      ]
+    },
+    {
+      "id": "adwick_to_sheffield",
+      "name": "Adwick to Sheffield",
+      "operator_scope": ["Northern"],
+      "source_ids": [
+        "northern-scunthorpe-adwick-sheffield-mfs-1",
+        "northern-scunthorpe-adwick-sheffield-mfs-2",
+        "northern-scunthorpe-adwick-sheffield-mfs-3",
+        "northern-scunthorpe-adwick-sheffield-mfs-4",
+        "northern-scunthorpe-adwick-sheffield-mfs-5",
+        "northern-scunthorpe-adwick-sheffield-sun-1",
+        "northern-scunthorpe-adwick-sheffield-sun-2",
+        "northern-scunthorpe-adwick-sheffield-sun-3"
+      ],
+      "direction": "adwick_to_sheffield",
+      "origin": "adwick",
+      "destination": "sheffield",
+      "core_station_sequence": [
+        "adwick",
+        "bentley_south_yorkshire",
+        "doncaster",
+        "conisbrough",
+        "mexborough",
+        "swinton_south_yorkshire",
+        "rotherham_central",
+        "meadowhall",
+        "sheffield"
+      ],
+      "sections": [
+        {
+          "id": "adwick_bentley_northern",
+          "from": "adwick",
+          "to": "bentley_south_yorkshire",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "bentley_doncaster_northern",
+          "from": "bentley_south_yorkshire",
+          "to": "doncaster",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "doncaster_conisbrough_northern_adwick",
+          "from": "doncaster",
+          "to": "conisbrough",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "conisbrough_mexborough_northern_adwick",
+          "from": "conisbrough",
+          "to": "mexborough",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "mexborough_swinton_northern_adwick",
+          "from": "mexborough",
+          "to": "swinton_south_yorkshire",
+          "scheduled_runtime_minutes": 3,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "swinton_rotherham_central_northern_adwick",
+          "from": "swinton_south_yorkshire",
+          "to": "rotherham_central",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "rotherham_central_meadowhall_northern_adwick",
+          "from": "rotherham_central",
+          "to": "meadowhall",
+          "scheduled_runtime_minutes": 10,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "meadowhall_sheffield_northern_adwick",
+          "from": "meadowhall",
+          "to": "sheffield",
+          "scheduled_runtime_minutes": 7,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "The Adwick branch is modelled separately from the Scunthorpe route because the two paths converge at Doncaster.",
+        "Section runtimes are baseline values taken from representative Northern timings in the uploaded screenshots.",
+        "Only unmarked operator columns should be transcribed as Northern services; columns marked TP or XC are excluded."
+      ]
+    },
+    {
+      "id": "sheffield_to_adwick",
+      "name": "Sheffield to Adwick",
+      "operator_scope": ["Northern"],
+      "source_ids": [
+        "northern-sheffield-adwick-scunthorpe-mfs-1",
+        "northern-sheffield-adwick-scunthorpe-mfs-2",
+        "northern-sheffield-adwick-scunthorpe-mfs-3",
+        "northern-sheffield-adwick-scunthorpe-mfs-4",
+        "northern-sheffield-adwick-scunthorpe-mfs-5",
+        "northern-sheffield-adwick-scunthorpe-sun-1",
+        "northern-sheffield-adwick-scunthorpe-sun-2",
+        "northern-sheffield-adwick-scunthorpe-sun-3"
+      ],
+      "direction": "sheffield_to_adwick",
+      "origin": "sheffield",
+      "destination": "adwick",
+      "core_station_sequence": [
+        "sheffield",
+        "meadowhall",
+        "rotherham_central",
+        "swinton_south_yorkshire",
+        "mexborough",
+        "conisbrough",
+        "doncaster",
+        "bentley_south_yorkshire",
+        "adwick"
+      ],
+      "sections": [
+        {
+          "id": "sheffield_meadowhall_northern_adwick",
+          "from": "sheffield",
+          "to": "meadowhall",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "meadowhall_rotherham_central_northern_adwick",
+          "from": "meadowhall",
+          "to": "rotherham_central",
+          "scheduled_runtime_minutes": 7,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "rotherham_central_swinton_northern_adwick",
+          "from": "rotherham_central",
+          "to": "swinton_south_yorkshire",
+          "scheduled_runtime_minutes": 9,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "swinton_mexborough_northern_adwick",
+          "from": "swinton_south_yorkshire",
+          "to": "mexborough",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "mexborough_conisbrough_northern_adwick",
+          "from": "mexborough",
+          "to": "conisbrough",
+          "scheduled_runtime_minutes": 4,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "conisbrough_doncaster_northern_adwick",
+          "from": "conisbrough",
+          "to": "doncaster",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "doncaster_bentley_northern",
+          "from": "doncaster",
+          "to": "bentley_south_yorkshire",
+          "scheduled_runtime_minutes": 6,
+          "capacity_model": "single_occupancy_assumption"
+        },
+        {
+          "id": "bentley_adwick_northern",
+          "from": "bentley_south_yorkshire",
+          "to": "adwick",
+          "scheduled_runtime_minutes": 5,
+          "capacity_model": "single_occupancy_assumption"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "The Adwick branch is modelled separately from the Scunthorpe route because the two paths diverge at Doncaster.",
+        "Section runtimes are baseline values taken from representative Northern timings in the uploaded screenshots.",
+        "Only unmarked operator columns should be transcribed as Northern services; columns marked TP or XC are excluded."
+      ]
     }
   ]
 }

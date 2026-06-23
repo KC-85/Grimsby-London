@@ -106,61 +106,97 @@
       "id": "scunthorpe",
       "name": "Scunthorpe",
       "crs": "SCU",
-      "tags": ["core_corridor", "tpe_source"]
+      "tags": ["core_corridor", "tpe_source", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "doncaster",
       "name": "Doncaster",
       "crs": "DON",
-      "tags": ["core_corridor", "tpe_source", "london_interchange"]
+      "tags": [
+        "core_corridor",
+        "tpe_source",
+        "northern_source",
+        "scunthorpe_sheffield_route",
+        "london_interchange"
+      ]
     },
     {
       "id": "kirk_sandall",
       "name": "Kirk Sandall",
       "crs": "KKS",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "althorpe",
       "name": "Althorpe",
       "crs": "ALP",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "crowle",
       "name": "Crowle",
       "crs": "CWE",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "thorne_south",
       "name": "Thorne South",
       "crs": "TNS",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "hatfield_stainforth",
       "name": "Hatfield & Stainforth",
       "crs": "HFS",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
+    },
+    {
+      "id": "adwick",
+      "name": "Adwick",
+      "crs": "AWK",
+      "tags": ["northern_source", "scunthorpe_sheffield_route"]
+    },
+    {
+      "id": "bentley_south_yorkshire",
+      "name": "Bentley (South Yorkshire)",
+      "crs": "BYK",
+      "tags": ["northern_source", "scunthorpe_sheffield_route"]
+    },
+    {
+      "id": "conisbrough",
+      "name": "Conisbrough",
+      "crs": "CNS",
+      "tags": ["northern_source", "scunthorpe_sheffield_route"]
+    },
+    {
+      "id": "mexborough",
+      "name": "Mexborough",
+      "crs": "MEX",
+      "tags": ["northern_source", "scunthorpe_sheffield_route"]
+    },
+    {
+      "id": "swinton_south_yorkshire",
+      "name": "Swinton (South Yorkshire)",
+      "crs": "SWN",
+      "tags": ["northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "rotherham_central",
       "name": "Rotherham Central",
       "crs": "RMC",
-      "tags": ["footnote_call"]
+      "tags": ["footnote_call", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "meadowhall",
       "name": "Meadowhall",
       "crs": "MHS",
-      "tags": ["tpe_onward"]
+      "tags": ["tpe_onward", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "sheffield",
       "name": "Sheffield",
       "crs": "SHF",
-      "tags": ["tpe_onward"]
+      "tags": ["tpe_onward", "northern_source", "scunthorpe_sheffield_route"]
     },
     {
       "id": "dore_totley",
