@@ -9,9 +9,16 @@ from simulation.disruption import (
     DwellExtension,
     ServiceCancellation,
     ServiceDelay,
-    apply_disruptions,
 )
+from simulation.engine import SimulationResult, run_simulation
 from simulation.infrastructure import load_infrastructure, station_lookup
+from simulation.metrics import (
+    calculate_metrics,
+    conflicts_by_day,
+    conflicts_by_section,
+    services_by_operator,
+    services_by_route,
+)
 from simulation.timetable import Service, flatten_services, load_services
 
 
@@ -47,6 +54,46 @@ def build_timetable_dataframe(
     df["status"] = df["service_id"].map(service_status or {}).fillna("scheduled")
     df["delay_minutes"] = df["service_id"].map(service_delays or {}).fillna(0).astype(int)
     return df
+
+
+def build_conflicts_dataframe(result: SimulationResult) -> pd.DataFrame:
+    rows = [
+        {
+            "section": conflict.section_key,
+            "first_service": conflict.first_service_id,
+            "second_service": conflict.second_service_id,
+            "days": ", ".join(conflict.service_days),
+            "overlap_start": conflict.overlap_start,
+            "overlap_end": conflict.overlap_end,
+            "overlap_minutes": conflict.overlap_minutes,
+        }
+        for conflict in result.conflicts
+    ]
+    return pd.DataFrame(rows)
+
+
+def build_occupations_dataframe(result: SimulationResult, stations_by_id) -> pd.DataFrame:
+    rows = [
+        {
+            "service_id": occupation.service_id,
+            "operator": occupation.operator,
+            "route_id": occupation.route_id,
+            "direction": occupation.direction,
+            "from": stations_by_id[occupation.from_station].name,
+            "to": stations_by_id[occupation.to_station].name,
+            "enter": occupation.enter_time,
+            "exit": occupation.exit_time,
+            "duration_minutes": occupation.duration_minutes,
+            "status": occupation.status.value,
+            "delay_minutes": occupation.delay_minutes,
+        }
+        for occupation in result.occupations
+    ]
+    return pd.DataFrame(rows)
+
+
+def build_breakdown_dataframe(items) -> pd.DataFrame:
+    return pd.DataFrame([item.model_dump() for item in items])
 
 
 def service_option_label(service: Service, stations_by_id) -> str:
@@ -144,23 +191,25 @@ def render_filters(df: pd.DataFrame) -> pd.DataFrame:
     ]
 
 
-def render_metrics(df: pd.DataFrame, infrastructure) -> None:
-    filtered_services = df["service_id"].nunique()
-    cancelled_services = df.loc[df["status"] == "cancelled", "service_id"].nunique()
-    delayed_services = df.loc[df["status"] == "delayed", "service_id"].nunique()
+def render_metric_cards(result: SimulationResult) -> None:
+    metrics = calculate_metrics(result)
 
     col1, col2, col3, col4, col5, col6 = st.columns(6)
-    col1.metric("Services Shown", filtered_services)
-    col2.metric("Delayed", delayed_services)
-    col3.metric("Cancelled", cancelled_services)
-    col4.metric("Timetable Rows", len(df))
-    col5.metric("Stations", len(infrastructure.stations))
-    col6.metric("Routes", len(infrastructure.routes))
+    col1.metric("Services", metrics.total_services)
+    col2.metric("Active", metrics.active_services)
+    col3.metric("Delayed", metrics.delayed_services)
+    col4.metric("Cancelled", metrics.cancelled_services)
+    col5.metric("Conflicts", metrics.conflicts)
+    col6.metric("Warnings", metrics.warnings)
+
+    col7, col8, col9, col10 = st.columns(4)
+    col7.metric("Total Delay", metrics.total_delay_minutes)
+    col8.metric("Average Delay", f"{metrics.average_delay_minutes:.1f}")
+    col9.metric("Max Delay", metrics.max_delay_minutes)
+    col10.metric("Conflict Minutes", metrics.total_conflict_minutes)
 
 
 def render_timetable(df: pd.DataFrame) -> None:
-    st.subheader("Timetable")
-
     display_columns = [
         "service_label",
         "operator",
@@ -180,6 +229,37 @@ def render_timetable(df: pd.DataFrame) -> None:
     )
 
 
+def render_conflicts(df: pd.DataFrame) -> None:
+    if df.empty:
+        st.info("No section conflicts detected.")
+        return
+
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
+
+def render_occupations(df: pd.DataFrame) -> None:
+    if df.empty:
+        st.info("No section occupation rows generated.")
+        return
+
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
+
+def render_breakdowns(result: SimulationResult) -> None:
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("Services By Operator")
+        st.dataframe(build_breakdown_dataframe(services_by_operator(result)), use_container_width=True, hide_index=True)
+        st.subheader("Conflicts By Section")
+        st.dataframe(build_breakdown_dataframe(conflicts_by_section(result)), use_container_width=True, hide_index=True)
+
+    with col2:
+        st.subheader("Services By Route")
+        st.dataframe(build_breakdown_dataframe(services_by_route(result)), use_container_width=True, hide_index=True)
+        st.subheader("Conflicts By Day")
+        st.dataframe(build_breakdown_dataframe(conflicts_by_day(result)), use_container_width=True, hide_index=True)
+
+
 def main() -> None:
     st.set_page_config(page_title="Grimsby-London Rail Simulation", layout="wide")
     st.title("Grimsby-London Rail Simulation")
@@ -192,20 +272,20 @@ def main() -> None:
     infrastructure, services = load_app_data(data_file_signature())
     stations_by_id = station_lookup(infrastructure.stations)
     disruptions = render_disruption_controls(services, stations_by_id)
-    disruption_result = apply_disruptions(services, disruptions)
+    simulation_result = run_simulation(services, infrastructure, disruptions)
 
-    if disruption_result.warnings:
-        for warning in disruption_result.warnings:
+    if simulation_result.warnings:
+        for warning in simulation_result.warnings:
             st.warning(warning)
 
-    simulated_services = [simulated.service for simulated in disruption_result.services]
+    simulated_services = [simulated.service for simulated in simulation_result.services]
     service_status = {
         simulated.service.id: simulated.status.value
-        for simulated in disruption_result.services
+        for simulated in simulation_result.services
     }
     service_delays = {
         simulated.service.id: simulated.delay_minutes
-        for simulated in disruption_result.services
+        for simulated in simulation_result.services
     }
 
     df = build_timetable_dataframe(
@@ -215,9 +295,22 @@ def main() -> None:
         service_delays=service_delays,
     )
     filtered_df = render_filters(df)
+    conflicts_df = build_conflicts_dataframe(simulation_result)
+    occupations_df = build_occupations_dataframe(simulation_result, stations_by_id)
 
-    render_metrics(filtered_df, infrastructure)
-    render_timetable(filtered_df)
+    render_metric_cards(simulation_result)
+
+    timetable_tab, conflicts_tab, occupations_tab, metrics_tab = st.tabs(
+        ["Timetable", "Conflicts", "Section Occupations", "Metrics"]
+    )
+    with timetable_tab:
+        render_timetable(filtered_df)
+    with conflicts_tab:
+        render_conflicts(conflicts_df)
+    with occupations_tab:
+        render_occupations(occupations_df)
+    with metrics_tab:
+        render_breakdowns(simulation_result)
 
 
 if __name__ == "__main__":
