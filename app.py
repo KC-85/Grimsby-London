@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
 from simulation.disruption import (
     DwellExtension,
+    Scenario,
     ServiceCancellation,
     ServiceDelay,
 )
@@ -28,6 +31,8 @@ DATA_PATHS = (
     Path("data/routes.json"),
     Path("data/sources.json"),
 )
+SCENARIOS_PATH = Path("data/scenarios.json")
+TIMELINE_BASE_DATE = pd.Timestamp("2026-01-01")
 
 
 def data_file_signature() -> tuple[tuple[str, int, int], ...]:
@@ -83,13 +88,18 @@ def build_occupations_dataframe(result: SimulationResult, stations_by_id, routes
     rows = [
         {
             "service_id": occupation.service_id,
+            "service_label": occupation.service_id.replace("tpe-", ""),
             "operator": occupation.operator,
             "route": routes_by_id[occupation.route_id].name,
+            "section": section_label(occupation.section_key, stations_by_id),
             "from": stations_by_id[occupation.from_station].name,
             "to": stations_by_id[occupation.to_station].name,
             "enter": occupation.enter_time,
             "exit": occupation.exit_time,
+            "enter_minutes": occupation.enter_time_minutes,
+            "exit_minutes": occupation.exit_time_minutes,
             "duration_minutes": occupation.duration_minutes,
+            "service_days": ", ".join(occupation.service_days),
             "status": occupation.status.value,
             "delay_minutes": occupation.delay_minutes,
         }
@@ -116,11 +126,83 @@ def service_option_label(service: Service, stations_by_id) -> str:
     return f"{departure} {origin} to {destination} ({days})"
 
 
+def load_saved_scenarios() -> list[Scenario]:
+    if not SCENARIOS_PATH.exists():
+        return []
+
+    with SCENARIOS_PATH.open("r", encoding="utf-8") as file:
+        payload = json.load(file)
+
+    return [
+        Scenario.model_validate(item)
+        for item in payload.get("scenarios", [])
+    ]
+
+
+def save_scenarios(scenarios: list[Scenario]) -> None:
+    SCENARIOS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "scenarios": [
+            scenario.model_dump(mode="json")
+            for scenario in scenarios
+        ]
+    }
+
+    with SCENARIOS_PATH.open("w", encoding="utf-8") as file:
+        json.dump(payload, file, indent=2)
+        file.write("\n")
+
+
+def upsert_scenario(scenarios: list[Scenario], scenario: Scenario) -> list[Scenario]:
+    return [
+        existing
+        for existing in scenarios
+        if existing.name.lower() != scenario.name.lower()
+    ] + [scenario]
+
+
+def render_saved_scenario_controls() -> None:
+    saved_scenarios = load_saved_scenarios()
+
+    if saved_scenarios:
+        scenario_by_id = {scenario.id: scenario for scenario in saved_scenarios}
+        selected_scenario_id = st.sidebar.selectbox(
+            "Saved scenario",
+            list(scenario_by_id),
+            format_func=lambda scenario_id: scenario_by_id[scenario_id].name,
+        )
+
+        if st.sidebar.button("Load scenario"):
+            st.session_state.disruptions = scenario_by_id[selected_scenario_id].disruptions
+            st.rerun()
+    else:
+        st.sidebar.caption("No saved scenarios yet")
+
+    with st.sidebar.form("save_scenario"):
+        scenario_name = st.text_input("Scenario name")
+        submitted = st.form_submit_button("Save scenario")
+
+    if submitted:
+        clean_name = scenario_name.strip()
+        if not clean_name:
+            st.sidebar.warning("Add a scenario name before saving.")
+            return
+
+        scenario = Scenario(
+            name=clean_name,
+            disruptions=list(st.session_state.disruptions),
+        )
+        save_scenarios(upsert_scenario(saved_scenarios, scenario))
+        st.sidebar.success(f"Saved {clean_name}")
+
+
 def render_disruption_controls(services: list[Service], stations_by_id) -> list:
     st.sidebar.header("Scenario")
 
     if "disruptions" not in st.session_state:
         st.session_state.disruptions = []
+
+    render_saved_scenario_controls()
 
     services_by_id = {service.id: service for service in services}
     service_ids = list(services_by_id)
@@ -257,7 +339,88 @@ def render_occupations(df: pd.DataFrame) -> None:
         st.info("No section occupation rows generated.")
         return
 
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    display_columns = [
+        "service_label",
+        "operator",
+        "route",
+        "section",
+        "enter",
+        "exit",
+        "duration_minutes",
+        "service_days",
+        "status",
+        "delay_minutes",
+    ]
+
+    st.dataframe(df[display_columns], use_container_width=True, hide_index=True)
+
+
+def minutes_to_timestamp(value: int) -> pd.Timestamp:
+    return TIMELINE_BASE_DATE + pd.to_timedelta(value, unit="m")
+
+
+def render_occupation_timeline(df: pd.DataFrame) -> None:
+    if df.empty:
+        st.info("No section occupation rows generated.")
+        return
+
+    days = sorted({day for value in df["service_days"] for day in value.split(", ")})
+    operators = sorted(df["operator"].unique())
+    routes = sorted(df["route"].unique())
+    statuses = sorted(df["status"].unique())
+
+    col1, col2, col3, col4 = st.columns(4)
+    selected_day = col1.selectbox("Timeline day", days)
+    selected_operators = col2.multiselect("Timeline operator", operators, default=operators)
+    selected_route = col3.selectbox("Timeline route", routes)
+    selected_statuses = col4.multiselect("Timeline status", statuses, default=statuses)
+
+    timeline_df = df[
+        df["service_days"].str.contains(selected_day, regex=False)
+        & df["operator"].isin(selected_operators)
+        & (df["route"] == selected_route)
+        & df["status"].isin(selected_statuses)
+    ].copy()
+
+    if timeline_df.empty:
+        st.info("No section occupations match the selected timeline filters.")
+        return
+
+    timeline_df["start"] = timeline_df["enter_minutes"].map(minutes_to_timestamp)
+    timeline_df["finish"] = timeline_df[["enter_minutes", "exit_minutes"]].max(axis=1)
+    timeline_df["finish"] = timeline_df["finish"].where(
+        timeline_df["finish"] > timeline_df["enter_minutes"],
+        timeline_df["enter_minutes"] + 1,
+    )
+    timeline_df["finish"] = timeline_df["finish"].map(minutes_to_timestamp)
+
+    height = min(900, max(420, 140 + timeline_df["section"].nunique() * 28))
+    figure = px.timeline(
+        timeline_df.sort_values(["section", "enter_minutes"]),
+        x_start="start",
+        x_end="finish",
+        y="section",
+        color="operator",
+        hover_data={
+            "service_label": True,
+            "route": True,
+            "enter": True,
+            "exit": True,
+            "status": True,
+            "delay_minutes": True,
+            "start": False,
+            "finish": False,
+        },
+    )
+    figure.update_yaxes(autorange="reversed", title=None)
+    figure.update_xaxes(tickformat="%H:%M", title="Time")
+    figure.update_layout(
+        height=height,
+        margin={"l": 10, "r": 10, "t": 20, "b": 10},
+        legend_title_text="Operator",
+    )
+
+    st.plotly_chart(figure, use_container_width=True)
 
 
 def render_breakdowns(result: SimulationResult, stations_by_id, routes_by_id) -> None:
@@ -339,7 +502,11 @@ def main() -> None:
     with conflicts_tab:
         render_conflicts(conflicts_df)
     with occupations_tab:
-        render_occupations(occupations_df)
+        timeline_tab, occupations_table_tab = st.tabs(["Timeline", "Table"])
+        with timeline_tab:
+            render_occupation_timeline(occupations_df)
+        with occupations_table_tab:
+            render_occupations(occupations_df)
     with metrics_tab:
         render_breakdowns(simulation_result, stations_by_id, routes_by_id)
 
