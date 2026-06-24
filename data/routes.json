@@ -985,6 +985,126 @@
         "Section runtimes are baseline values taken from representative Northern timings in the uploaded screenshots.",
         "Only unmarked operator columns should be transcribed as Northern services; columns marked TP or XC are excluded."
       ]
+    },
+    {
+      "id": "gc_proposed_cleethorpes_to_doncaster",
+      "name": "Proposed Cleethorpes to Doncaster",
+      "operator_scope": ["Grand Central"],
+      "source_ids": ["grand-central-cleethorpes-london-proposal"],
+      "direction": "gc_proposed_cleethorpes_to_doncaster",
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "core_station_sequence": [
+        "cleethorpes",
+        "grimsby_town",
+        "habrough",
+        "barnetby",
+        "scunthorpe",
+        "doncaster"
+      ],
+      "sections": [
+        {
+          "id": "gc_cleethorpes_grimsby_town",
+          "from": "cleethorpes",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "single_track"
+        },
+        {
+          "id": "gc_grimsby_town_habrough",
+          "from": "grimsby_town",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 14,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_habrough_barnetby",
+          "from": "habrough",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_barnetby_scunthorpe",
+          "from": "barnetby",
+          "to": "scunthorpe",
+          "scheduled_runtime_minutes": 15,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_scunthorpe_doncaster",
+          "from": "scunthorpe",
+          "to": "doncaster",
+          "scheduled_runtime_minutes": 35,
+          "capacity_model": "double_track"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "This route represents only the new Cleethorpes to Doncaster portion of the proposed London service.",
+        "At Doncaster the unit couples to an existing Grand Central West Riding service, so no additional East Coast Main Line path is modelled.",
+        "Section runtimes use the proposed timetable timings."
+      ]
+    },
+    {
+      "id": "gc_proposed_doncaster_to_cleethorpes",
+      "name": "Proposed Doncaster to Cleethorpes",
+      "operator_scope": ["Grand Central"],
+      "source_ids": ["grand-central-cleethorpes-london-proposal"],
+      "direction": "gc_proposed_doncaster_to_cleethorpes",
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "core_station_sequence": [
+        "doncaster",
+        "scunthorpe",
+        "barnetby",
+        "habrough",
+        "grimsby_town",
+        "cleethorpes"
+      ],
+      "sections": [
+        {
+          "id": "gc_doncaster_scunthorpe",
+          "from": "doncaster",
+          "to": "scunthorpe",
+          "scheduled_runtime_minutes": 26,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_scunthorpe_barnetby",
+          "from": "scunthorpe",
+          "to": "barnetby",
+          "scheduled_runtime_minutes": 14,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_barnetby_habrough",
+          "from": "barnetby",
+          "to": "habrough",
+          "scheduled_runtime_minutes": 8,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_habrough_grimsby_town",
+          "from": "habrough",
+          "to": "grimsby_town",
+          "scheduled_runtime_minutes": 11,
+          "capacity_model": "double_track"
+        },
+        {
+          "id": "gc_grimsby_town_cleethorpes",
+          "from": "grimsby_town",
+          "to": "cleethorpes",
+          "scheduled_runtime_minutes": 14,
+          "capacity_model": "single_track"
+        }
+      ],
+      "optional_call_groups": [],
+      "assumptions": [
+        "This route represents only the new Doncaster to Cleethorpes portion of the proposed London service.",
+        "At Doncaster the unit decouples from an existing Grand Central West Riding service, so no additional East Coast Main Line path is modelled.",
+        "Section runtimes use the proposed timetable timings."
+      ]
     }
   ]
 }

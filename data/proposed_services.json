@@ -1,0 +1,156 @@
+{
+  "services": [
+    {
+      "id": "gc-proposed-1z59",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_cleethorpes_to_doncaster",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_cleethorpes_to_doncaster",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "COUPLE_DON"],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "06:47"},
+        {"station_id": "grimsby_town", "arrival": "06:54", "departure": "06:57"},
+        {"station_id": "habrough", "arrival": "07:11", "departure": "07:12"},
+        {"station_id": "barnetby", "arrival": "07:20", "departure": "07:21"},
+        {"station_id": "scunthorpe", "arrival": "07:35", "departure": "07:38"},
+        {"station_id": "doncaster", "arrival": "08:13"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z70",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_cleethorpes_to_doncaster",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_cleethorpes_to_doncaster",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "COUPLE_DON"],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "08:27"},
+        {"station_id": "grimsby_town", "arrival": "08:34", "departure": "08:41"},
+        {"station_id": "habrough", "arrival": "08:51", "departure": "08:51"},
+        {"station_id": "barnetby", "arrival": "08:59", "departure": "09:00"},
+        {"station_id": "scunthorpe", "arrival": "09:14", "departure": "09:20"},
+        {"station_id": "doncaster", "arrival": "09:46"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z67",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_cleethorpes_to_doncaster",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_cleethorpes_to_doncaster",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "COUPLE_DON"],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "15:30"},
+        {"station_id": "grimsby_town", "arrival": "15:37", "departure": "15:41"},
+        {"station_id": "habrough", "arrival": "15:51", "departure": "15:52"},
+        {"station_id": "barnetby", "arrival": "16:00", "departure": "16:01"},
+        {"station_id": "scunthorpe", "arrival": "16:15", "departure": "16:16"},
+        {"station_id": "doncaster", "arrival": "16:49"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z68",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_cleethorpes_to_doncaster",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_cleethorpes_to_doncaster",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "COUPLE_DON"],
+      "origin": "cleethorpes",
+      "destination": "doncaster",
+      "stops": [
+        {"station_id": "cleethorpes", "departure": "17:01"},
+        {"station_id": "grimsby_town", "arrival": "17:08", "departure": "17:09"},
+        {"station_id": "habrough", "arrival": "17:19", "departure": "17:20"},
+        {"station_id": "barnetby", "arrival": "17:28", "departure": "17:29"},
+        {"station_id": "scunthorpe", "arrival": "17:43", "departure": "17:44"},
+        {"station_id": "doncaster", "arrival": "18:11"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z81",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_doncaster_to_cleethorpes",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_doncaster_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "DECOUPLE_DON"],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "13:00"},
+        {"station_id": "scunthorpe", "arrival": "13:25", "departure": "13:28"},
+        {"station_id": "barnetby", "arrival": "13:42", "departure": "13:43"},
+        {"station_id": "habrough", "arrival": "13:51", "departure": "13:52"},
+        {"station_id": "grimsby_town", "arrival": "14:02", "departure": "14:06"},
+        {"station_id": "cleethorpes", "arrival": "14:23"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z83",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_doncaster_to_cleethorpes",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_doncaster_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "DECOUPLE_DON"],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "15:02"},
+        {"station_id": "scunthorpe", "arrival": "15:31", "departure": "15:32"},
+        {"station_id": "barnetby", "arrival": "15:46", "departure": "15:47"},
+        {"station_id": "habrough", "arrival": "15:55", "departure": "15:56"},
+        {"station_id": "grimsby_town", "arrival": "16:06", "departure": "16:07"},
+        {"station_id": "cleethorpes", "arrival": "16:23"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z97",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_doncaster_to_cleethorpes",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_doncaster_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "DECOUPLE_DON"],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "21:48"},
+        {"station_id": "scunthorpe", "arrival": "22:13", "departure": "22:14"},
+        {"station_id": "barnetby", "arrival": "22:28", "departure": "22:29"},
+        {"station_id": "habrough", "arrival": "22:37", "departure": "22:38"},
+        {"station_id": "grimsby_town", "arrival": "22:50", "departure": "22:51"},
+        {"station_id": "cleethorpes", "arrival": "23:05"}
+      ]
+    },
+    {
+      "id": "gc-proposed-1z88",
+      "operator": "Grand Central",
+      "route_id": "gc_proposed_doncaster_to_cleethorpes",
+      "source_id": "grand-central-cleethorpes-london-proposal",
+      "direction": "gc_proposed_doncaster_to_cleethorpes",
+      "service_days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "footnote_codes": ["PROPOSED", "DECOUPLE_DON"],
+      "origin": "doncaster",
+      "destination": "cleethorpes",
+      "stops": [
+        {"station_id": "doncaster", "departure": "22:35"},
+        {"station_id": "scunthorpe", "arrival": "23:03", "departure": "23:06"},
+        {"station_id": "barnetby", "arrival": "23:22", "departure": "23:23"},
+        {"station_id": "habrough", "arrival": "23:31", "departure": "23:32"},
+        {"station_id": "grimsby_town", "arrival": "23:42", "departure": "23:43"},
+        {"station_id": "cleethorpes", "arrival": "23:52"}
+      ]
+    }
+  ]
+}

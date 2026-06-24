@@ -548,6 +548,42 @@
         "Late continuation page; only unmarked operator columns should be transcribed as Northern services."
       ],
       "footnotes": []
+    },
+    {
+      "id": "grand-central-cleethorpes-london-proposal",
+      "operator": "Grand Central",
+      "title": "Proposed Cleethorpes to London King's Cross services",
+      "direction": "cleethorpes_london_return",
+      "service_days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "file": "data/raw/gc/clee-london-clee-7days.png",
+      "transcription_notes": [
+        "The simulation transcribes the proposed Cleethorpes to Doncaster extensions only.",
+        "Southbound portions couple to existing Grand Central West Riding services at Doncaster.",
+        "Northbound portions decouple from existing Grand Central West Riding services at Doncaster.",
+        "The onward East Coast Main Line paths are not added as separate train paths in this simulation."
+      ],
+      "footnotes": [
+        {
+          "code": "PROPOSED",
+          "text": "Proposed service, not part of the current baseline timetable"
+        },
+        {
+          "code": "COUPLE_DON",
+          "text": "Couples to an existing Grand Central service at Doncaster"
+        },
+        {
+          "code": "DECOUPLE_DON",
+          "text": "Decouples from an existing Grand Central service at Doncaster"
+        }
+      ]
     }
   ]
 }
