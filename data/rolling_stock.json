@@ -1,0 +1,160 @@
+{
+  "rolling_stock": [
+    {
+      "id": "br_class_150_two_car",
+      "name": "British Rail Class 150",
+      "family": "Sprinter",
+      "operator_scope": ["Northern"],
+      "status": "current",
+      "formation": {
+        "cars": 2,
+        "length_metres": null,
+        "seats": null
+      },
+      "traction": {
+        "type": "diesel_hydraulic",
+        "maximum_speed_mph": 75
+      },
+      "coupling": {
+        "type": "BSI"
+      },
+      "route_assignments": [
+        {
+          "route_ids": [
+            "scunthorpe_to_doncaster",
+            "doncaster_to_scunthorpe"
+          ],
+          "formation_cars": 2,
+          "assignment_status": "user_confirmed"
+        }
+      ],
+      "notes": [
+        "Only two-car variants are in scope for the modelled routes.",
+        "Seating capacity varies by subclass and interior configuration."
+      ],
+      "sources": [
+        {
+          "title": "British Rail Class 150",
+          "url": "https://en.wikipedia.org/wiki/British_Rail_Class_150",
+          "accessed": "2026-06-24",
+          "source_type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "br_class_170_two_car_emr",
+      "name": "British Rail Class 170",
+      "family": "Turbostar",
+      "operator_scope": ["East Midlands Railway"],
+      "status": "current",
+      "formation": {
+        "cars": 2,
+        "length_metres": null,
+        "seats": null
+      },
+      "traction": {
+        "type": "diesel_hydraulic",
+        "maximum_speed_mph": 100
+      },
+      "coupling": {
+        "type": "BSI"
+      },
+      "route_assignments": [
+        {
+          "route_ids": [
+            "cleethorpes_to_barton_on_humber",
+            "barton_on_humber_to_cleethorpes"
+          ],
+          "formation_cars": 2,
+          "assignment_status": "user_confirmed"
+        },
+        {
+          "route_ids": [
+            "cleethorpes_to_lincoln",
+            "lincoln_to_cleethorpes"
+          ],
+          "formation_cars": 2,
+          "assignment_status": "user_confirmed"
+        }
+      ],
+      "notes": [
+        "The model uses the two-car Class 170 formation operated by East Midlands Railway.",
+        "The Lincoln assignment includes the Grimsby Town-originating service represented on the Cleethorpes to Lincoln route.",
+        "Seating capacity varies by subclass and interior configuration."
+      ],
+      "sources": [
+        {
+          "title": "British Rail Class 170",
+          "url": "https://en.wikipedia.org/wiki/British_Rail_Class_170",
+          "accessed": "2026-06-24",
+          "source_type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "br_class_185_tpe",
+      "name": "British Rail Class 185",
+      "family": "Desiro",
+      "operator_scope": ["TransPennine Express"],
+      "status": "current",
+      "formation": {
+        "cars": 3,
+        "length_metres": 71.276,
+        "seats": 169,
+        "tip_up_seats": 12
+      },
+      "operating_formations": [
+        {
+          "id": "single_unit",
+          "units": 1,
+          "cars": 3,
+          "length_metres": 71.276,
+          "seats": 169,
+          "tip_up_seats": 12,
+          "usage": "standard"
+        },
+        {
+          "id": "coupled_pair",
+          "units": 2,
+          "cars": 6,
+          "length_metres": 142.552,
+          "seats": 338,
+          "tip_up_seats": 24,
+          "usage": "selected_peak_and_high_demand_services"
+        }
+      ],
+      "traction": {
+        "type": "diesel_hydraulic",
+        "maximum_speed_mph": 100
+      },
+      "coupling": {
+        "type": "Dellner 12",
+        "multiple_unit_compatible": true
+      },
+      "route_assignments": [
+        {
+          "route_ids": [
+            "cleethorpes_to_doncaster",
+            "doncaster_to_cleethorpes"
+          ],
+          "formation_cars": 3,
+          "alternative_formation_cars": 6,
+          "assignment_status": "user_confirmed"
+        }
+      ],
+      "notes": [
+        "The normal formation is one three-car Class 185 unit.",
+        "Some peak or high-demand services operate as two coupled three-car units, producing a six-car train.",
+        "Individual services have not yet been assigned to single or coupled formations."
+      ],
+      "sources": [
+        {
+          "title": "British Rail Class 185",
+          "url": "https://en.wikipedia.org/wiki/British_Rail_Class_185",
+          "accessed": "2026-06-24",
+          "source_type": "secondary"
+        }
+      ]
+    }
+  ]
+}
