@@ -80,13 +80,17 @@ def section_label(section_key: str, stations_by_id) -> str:
 
 
 def build_conflicts_dataframe(result: SimulationResult, stations_by_id) -> pd.DataFrame:
-    labels_by_id = service_labels(
-        [simulated.service for simulated in result.services]
-    )
+    services_by_id = {
+        simulated.service.id: simulated.service
+        for simulated in result.services
+    }
+    labels_by_id = service_labels(list(services_by_id.values()))
     rows = [
         {
             "section": section_label(conflict.section_key, stations_by_id),
+            "first_operator": services_by_id[conflict.first_service_id].operator,
             "first_service": labels_by_id.get(conflict.first_service_id, conflict.first_service_id),
+            "second_operator": services_by_id[conflict.second_service_id].operator,
             "second_service": labels_by_id.get(conflict.second_service_id, conflict.second_service_id),
             "days": ", ".join(conflict.service_days),
             "overlap_start": conflict.overlap_start,
@@ -485,7 +489,7 @@ def main() -> None:
     routes_by_id = route_lookup(infrastructure.routes)
     include_proposal = st.sidebar.toggle(
         "Include Grand Central proposal",
-        value=False,
+        value=True,
     )
     services = [
         *baseline_services,
