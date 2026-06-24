@@ -13,7 +13,7 @@ from simulation.disruption import (
     minutes_from_time,
     time_from_minutes,
 )
-from simulation.infrastructure import InfrastructureData, Route, route_lookup
+from simulation.infrastructure import CapacityModel, InfrastructureData, Route, route_lookup
 from simulation.timetable import Service, Stop
 
 
@@ -31,6 +31,8 @@ class SectionOccupation(BaseModel):
     section_key: str
     from_station: str
     to_station: str
+    capacity_model: CapacityModel
+    directional_capacity: int
     enter_time_minutes: int
     exit_time_minutes: int
     status: ServiceStatus
@@ -225,6 +227,8 @@ def build_section_occupations(
                         section_key=section_key(section.from_station, section.to_station),
                         from_station=section.from_station,
                         to_station=section.to_station,
+                        capacity_model=section.capacity_model,
+                        directional_capacity=section.directional_capacity,
                         enter_time_minutes=enter_time,
                         exit_time_minutes=exit_time,
                         status=simulated_service.status,
@@ -236,43 +240,72 @@ def build_section_occupations(
 
 
 def detect_section_conflicts(occupations: list[SectionOccupation]) -> list[SectionConflict]:
-    """Detect simple time overlaps on the same physical section."""
+    """Detect overlapping movements on confirmed single-track sections."""
 
     occupations_by_section: dict[str, list[SectionOccupation]] = defaultdict(list)
     for occupation in occupations:
+        if occupation.capacity_model != CapacityModel.SINGLE_TRACK:
+            continue
         occupations_by_section[occupation.section_key].append(occupation)
 
     conflicts: list[SectionConflict] = []
     for section_occupations in occupations_by_section.values():
-        ordered_occupations = sorted(section_occupations, key=lambda occupation: occupation.enter_time_minutes)
-        for index, first in enumerate(ordered_occupations):
-            for second in ordered_occupations[index + 1:]:
-                if second.enter_time_minutes >= first.exit_time_minutes:
-                    break
-                if first.service_id == second.service_id:
+        section_days = sorted({day for occupation in section_occupations for day in occupation.service_days})
+        for day in section_days:
+            lane_occupations: dict[str, list[SectionOccupation]] = defaultdict(list)
+            for occupation in section_occupations:
+                if day not in occupation.service_days:
                     continue
-                shared_days = sorted(set(first.service_days).intersection(second.service_days))
-                if not shared_days:
-                    continue
+                lane_occupations["shared"].append(occupation)
 
-                overlap_start = max(first.enter_time_minutes, second.enter_time_minutes)
-                overlap_end = min(first.exit_time_minutes, second.exit_time_minutes)
-                if overlap_end <= overlap_start:
-                    continue
-
-                conflicts.append(
-                    SectionConflict(
-                        section_key=first.section_key,
-                        first_service_id=first.service_id,
-                        second_service_id=second.service_id,
-                        service_days=shared_days,
-                        overlap_start_minutes=overlap_start,
-                        overlap_end_minutes=overlap_end,
-                        overlap_minutes=overlap_end - overlap_start,
-                    )
+            for occupations_in_lane in lane_occupations.values():
+                ordered = sorted(
+                    occupations_in_lane,
+                    key=lambda occupation: (occupation.enter_time_minutes, occupation.exit_time_minutes),
                 )
+                active: list[SectionOccupation] = []
+                for occupation in ordered:
+                    active = [
+                        existing
+                        for existing in active
+                        if existing.exit_time_minutes > occupation.enter_time_minutes
+                        and existing.service_id != occupation.service_id
+                    ]
 
-    return conflicts
+                    if len(active) >= occupation.directional_capacity:
+                        blocking = max(active, key=lambda existing: existing.exit_time_minutes)
+                        overlap_end = min(blocking.exit_time_minutes, occupation.exit_time_minutes)
+                        if overlap_end > occupation.enter_time_minutes:
+                            conflicts.append(
+                                SectionConflict(
+                                    section_key=occupation.section_key,
+                                    first_service_id=blocking.service_id,
+                                    second_service_id=occupation.service_id,
+                                    service_days=[day],
+                                    overlap_start_minutes=occupation.enter_time_minutes,
+                                    overlap_end_minutes=overlap_end,
+                                    overlap_minutes=overlap_end - occupation.enter_time_minutes,
+                                )
+                            )
+
+                    active.append(occupation)
+
+    merged_conflicts: dict[tuple, SectionConflict] = {}
+    for conflict in conflicts:
+        signature = (
+            conflict.section_key,
+            conflict.first_service_id,
+            conflict.second_service_id,
+            conflict.overlap_start_minutes,
+            conflict.overlap_end_minutes,
+        )
+        existing = merged_conflicts.get(signature)
+        if existing is None:
+            merged_conflicts[signature] = conflict
+            continue
+        existing.service_days = sorted(set(existing.service_days + conflict.service_days))
+
+    return list(merged_conflicts.values())
 
 
 def run_simulation(

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from enum import StrEnum
 from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -46,6 +47,14 @@ class RouteEndpointPair(BaseModel):
     to_station: str = Field(alias="to")
 
 
+class CapacityModel(StrEnum):
+    """Supported physical track layouts for a route section."""
+
+    SINGLE_TRACK = "single_track"
+    DOUBLE_TRACK = "double_track"
+    FOUR_TRACK = "four_track"
+
+
 class RouteSection(BaseModel):
     """A simplified route section used by the MVP simulation."""
 
@@ -55,13 +64,21 @@ class RouteSection(BaseModel):
     from_station: str = Field(alias="from")
     to_station: str = Field(alias="to")
     scheduled_runtime_minutes: int
-    capacity_model: str
+    capacity_model: CapacityModel
 
     @model_validator(mode="after")
     def validate_runtime(self) -> RouteSection:
         if self.scheduled_runtime_minutes <= 0:
             raise ValueError("scheduled_runtime_minutes must be greater than zero")
         return self
+
+    @property
+    def directional_capacity(self) -> int:
+        """Return simultaneous trains allowed in one direction."""
+
+        if self.capacity_model == CapacityModel.FOUR_TRACK:
+            return 2
+        return 1
 
 
 class OptionalCallGroup(BaseModel):
@@ -148,6 +165,7 @@ class InfrastructureData(BaseModel):
     def validate_route_station_references(self) -> InfrastructureData:
         station_ids = self.station_ids
         missing_references: list[str] = []
+        capacity_by_section: dict[tuple[str, str], CapacityModel] = {}
 
         for route in self.routes:
             route_station_refs = [route.origin, route.destination]
@@ -161,6 +179,17 @@ class InfrastructureData(BaseModel):
             for station_id in route_station_refs:
                 if station_id not in station_ids:
                     missing_references.append(f"{route.id}:{station_id}")
+
+            for section in route.sections:
+                physical_section = tuple(sorted((section.from_station, section.to_station)))
+                existing_capacity = capacity_by_section.setdefault(
+                    physical_section,
+                    section.capacity_model,
+                )
+                if existing_capacity != section.capacity_model:
+                    raise ValueError(
+                        f"inconsistent capacity model for {' to '.join(physical_section)}"
+                    )
 
         if missing_references:
             raise ValueError(f"missing station references: {', '.join(sorted(set(missing_references)))}")

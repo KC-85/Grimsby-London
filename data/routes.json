@@ -26,35 +26,35 @@
           "from": "cleethorpes",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_town_habrough",
           "from": "grimsby_town",
           "to": "habrough",
           "scheduled_runtime_minutes": 10,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_barnetby",
           "from": "habrough",
           "to": "barnetby",
           "scheduled_runtime_minutes": 9,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "barnetby_scunthorpe",
           "from": "barnetby",
           "to": "scunthorpe",
           "scheduled_runtime_minutes": 15,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "scunthorpe_doncaster",
           "from": "scunthorpe",
           "to": "doncaster",
           "scheduled_runtime_minutes": 31,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [
@@ -84,7 +84,7 @@
       ],
       "assumptions": [
         "Section runtimes are baseline values taken from typical visible TPE timings in the uploaded screenshots.",
-        "Capacity is simplified for the MVP and does not represent signalling blocks or exact railway infrastructure.",
+        "Track layout uses the confirmed single-track Cleethorpes to Grimsby Town section; signalling blocks and minimum headways remain simplified.",
         "Optional calls are preserved for timetable transcription, but the MVP simulation should focus on the core Cleethorpes to Doncaster corridor."
       ]
     },
@@ -114,35 +114,35 @@
           "from": "doncaster",
           "to": "scunthorpe",
           "scheduled_runtime_minutes": 27,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "scunthorpe_barnetby",
           "from": "scunthorpe",
           "to": "barnetby",
           "scheduled_runtime_minutes": 15,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "barnetby_habrough",
           "from": "barnetby",
           "to": "habrough",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_grimsby_town",
           "from": "habrough",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 15,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "grimsby_town_cleethorpes",
           "from": "grimsby_town",
           "to": "cleethorpes",
           "scheduled_runtime_minutes": 9,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         }
       ],
       "optional_call_groups": [
@@ -164,7 +164,7 @@
       ],
       "assumptions": [
         "Section runtimes are baseline values taken from typical visible TPE timings in the uploaded screenshots.",
-        "Capacity is simplified for the MVP and does not represent signalling blocks or exact railway infrastructure.",
+        "Track layout uses the confirmed single-track Grimsby Town to Cleethorpes section; signalling blocks and minimum headways remain simplified.",
         "Optional calls are preserved for timetable transcription, but the MVP simulation should focus on the core Doncaster to Cleethorpes corridor."
       ]
     },
@@ -202,70 +202,70 @@
           "from": "cleethorpes",
           "to": "new_clee",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_clee_grimsby_docks",
           "from": "new_clee",
           "to": "grimsby_docks",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_docks_grimsby_town",
           "from": "grimsby_docks",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_town_great_coates_lincoln",
           "from": "grimsby_town",
           "to": "great_coates",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "great_coates_healing_lincoln",
           "from": "great_coates",
           "to": "healing",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "healing_stallingborough_lincoln",
           "from": "healing",
           "to": "stallingborough",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "stallingborough_habrough_lincoln",
           "from": "stallingborough",
           "to": "habrough",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_barnetby_emr",
           "from": "habrough",
           "to": "barnetby",
           "scheduled_runtime_minutes": 10,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "barnetby_market_rasen",
           "from": "barnetby",
           "to": "market_rasen",
           "scheduled_runtime_minutes": 16,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "market_rasen_lincoln",
           "from": "market_rasen",
           "to": "lincoln",
           "scheduled_runtime_minutes": 19,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [],
@@ -310,70 +310,70 @@
           "from": "lincoln",
           "to": "market_rasen",
           "scheduled_runtime_minutes": 16,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "market_rasen_barnetby",
           "from": "market_rasen",
           "to": "barnetby",
           "scheduled_runtime_minutes": 17,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "barnetby_habrough_emr_return",
           "from": "barnetby",
           "to": "habrough",
           "scheduled_runtime_minutes": 10,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_stallingborough_lincoln",
           "from": "habrough",
           "to": "stallingborough",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "stallingborough_healing_lincoln",
           "from": "stallingborough",
           "to": "healing",
           "scheduled_runtime_minutes": 2,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "healing_great_coates_lincoln",
           "from": "healing",
           "to": "great_coates",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "great_coates_grimsby_town_lincoln",
           "from": "great_coates",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "grimsby_town_grimsby_docks",
           "from": "grimsby_town",
           "to": "grimsby_docks",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_docks_new_clee",
           "from": "grimsby_docks",
           "to": "new_clee",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_clee_cleethorpes",
           "from": "new_clee",
           "to": "cleethorpes",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         }
       ],
       "optional_call_groups": [],
@@ -420,91 +420,91 @@
           "from": "cleethorpes",
           "to": "new_clee",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_clee_grimsby_docks_barton",
           "from": "new_clee",
           "to": "grimsby_docks",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_docks_grimsby_town_barton",
           "from": "grimsby_docks",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_town_great_coates",
           "from": "grimsby_town",
           "to": "great_coates",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "great_coates_healing",
           "from": "great_coates",
           "to": "healing",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "healing_stallingborough",
           "from": "healing",
           "to": "stallingborough",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "stallingborough_habrough",
           "from": "stallingborough",
           "to": "habrough",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_ulceby",
           "from": "habrough",
           "to": "ulceby",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "ulceby_thornton_abbey",
           "from": "ulceby",
           "to": "thornton_abbey",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "thornton_abbey_goxhill",
           "from": "thornton_abbey",
           "to": "goxhill",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "goxhill_new_holland",
           "from": "goxhill",
           "to": "new_holland",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_holland_barrow_haven",
           "from": "new_holland",
           "to": "barrow_haven",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "barrow_haven_barton_on_humber",
           "from": "barrow_haven",
           "to": "barton_on_humber",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         }
       ],
       "optional_call_groups": [],
@@ -552,91 +552,91 @@
           "from": "barton_on_humber",
           "to": "barrow_haven",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "barrow_haven_new_holland",
           "from": "barrow_haven",
           "to": "new_holland",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_holland_goxhill",
           "from": "new_holland",
           "to": "goxhill",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "goxhill_thornton_abbey",
           "from": "goxhill",
           "to": "thornton_abbey",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "thornton_abbey_ulceby",
           "from": "thornton_abbey",
           "to": "ulceby",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "ulceby_habrough",
           "from": "ulceby",
           "to": "habrough",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "habrough_stallingborough",
           "from": "habrough",
           "to": "stallingborough",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "stallingborough_healing",
           "from": "stallingborough",
           "to": "healing",
           "scheduled_runtime_minutes": 2,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "healing_great_coates",
           "from": "healing",
           "to": "great_coates",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "great_coates_grimsby_town",
           "from": "great_coates",
           "to": "grimsby_town",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "grimsby_town_grimsby_docks_barton_return",
           "from": "grimsby_town",
           "to": "grimsby_docks",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "grimsby_docks_new_clee_barton_return",
           "from": "grimsby_docks",
           "to": "new_clee",
           "scheduled_runtime_minutes": 2,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         },
         {
           "id": "new_clee_cleethorpes_barton_return",
           "from": "new_clee",
           "to": "cleethorpes",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "single_track"
         }
       ],
       "optional_call_groups": [],
@@ -678,42 +678,42 @@
           "from": "scunthorpe",
           "to": "althorpe",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "althorpe_crowle_northern",
           "from": "althorpe",
           "to": "crowle",
           "scheduled_runtime_minutes": 7,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "crowle_thorne_south_northern",
           "from": "crowle",
           "to": "thorne_south",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "thorne_south_hatfield_stainforth_northern",
           "from": "thorne_south",
           "to": "hatfield_stainforth",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "four_track"
         },
         {
           "id": "hatfield_stainforth_kirk_sandall_northern",
           "from": "hatfield_stainforth",
           "to": "kirk_sandall",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "four_track"
         },
         {
           "id": "kirk_sandall_doncaster_northern",
           "from": "kirk_sandall",
           "to": "doncaster",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [],
@@ -755,42 +755,42 @@
           "from": "doncaster",
           "to": "kirk_sandall",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "kirk_sandall_hatfield_stainforth_northern",
           "from": "kirk_sandall",
           "to": "hatfield_stainforth",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "four_track"
         },
         {
           "id": "hatfield_stainforth_thorne_south_northern",
           "from": "hatfield_stainforth",
           "to": "thorne_south",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "four_track"
         },
         {
           "id": "thorne_south_crowle_northern",
           "from": "thorne_south",
           "to": "crowle",
           "scheduled_runtime_minutes": 9,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "crowle_althorpe_northern",
           "from": "crowle",
           "to": "althorpe",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "althorpe_scunthorpe_northern",
           "from": "althorpe",
           "to": "scunthorpe",
           "scheduled_runtime_minutes": 7,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [],
@@ -834,56 +834,56 @@
           "from": "adwick",
           "to": "bentley_south_yorkshire",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "bentley_doncaster_northern",
           "from": "bentley_south_yorkshire",
           "to": "doncaster",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "doncaster_conisbrough_northern_adwick",
           "from": "doncaster",
           "to": "conisbrough",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "conisbrough_mexborough_northern_adwick",
           "from": "conisbrough",
           "to": "mexborough",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "mexborough_swinton_northern_adwick",
           "from": "mexborough",
           "to": "swinton_south_yorkshire",
           "scheduled_runtime_minutes": 3,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "swinton_rotherham_central_northern_adwick",
           "from": "swinton_south_yorkshire",
           "to": "rotherham_central",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "rotherham_central_meadowhall_northern_adwick",
           "from": "rotherham_central",
           "to": "meadowhall",
           "scheduled_runtime_minutes": 10,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "meadowhall_sheffield_northern_adwick",
           "from": "meadowhall",
           "to": "sheffield",
           "scheduled_runtime_minutes": 7,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [],
@@ -927,56 +927,56 @@
           "from": "sheffield",
           "to": "meadowhall",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "meadowhall_rotherham_central_northern_adwick",
           "from": "meadowhall",
           "to": "rotherham_central",
           "scheduled_runtime_minutes": 7,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "rotherham_central_swinton_northern_adwick",
           "from": "rotherham_central",
           "to": "swinton_south_yorkshire",
           "scheduled_runtime_minutes": 9,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "swinton_mexborough_northern_adwick",
           "from": "swinton_south_yorkshire",
           "to": "mexborough",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "mexborough_conisbrough_northern_adwick",
           "from": "mexborough",
           "to": "conisbrough",
           "scheduled_runtime_minutes": 4,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "conisbrough_doncaster_northern_adwick",
           "from": "conisbrough",
           "to": "doncaster",
           "scheduled_runtime_minutes": 8,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "doncaster_bentley_northern",
           "from": "doncaster",
           "to": "bentley_south_yorkshire",
           "scheduled_runtime_minutes": 6,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         },
         {
           "id": "bentley_adwick_northern",
           "from": "bentley_south_yorkshire",
           "to": "adwick",
           "scheduled_runtime_minutes": 5,
-          "capacity_model": "single_occupancy_assumption"
+          "capacity_model": "double_track"
         }
       ],
       "optional_call_groups": [],

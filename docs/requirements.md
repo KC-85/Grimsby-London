@@ -88,6 +88,7 @@ The infrastructure model should initially represent:
 - Route sections between stations.
 - Approximate running time between route sections.
 - Optional platform or capacity constraints where useful.
+- Track-aware section capacity using confirmed single, double, and four-track layouts.
 
 The model should be simple enough to maintain manually, but structured enough to support later conflict detection.
 
@@ -295,4 +296,3 @@ Should contain:
 - What delay threshold should count as significant?
 - Should the first Streamlit version favour tables, charts, or a timeline view?
 - How detailed should Northern's Scunthorpe-Lincoln service be in the first version?
-

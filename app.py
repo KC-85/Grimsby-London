@@ -94,6 +94,8 @@ def build_occupations_dataframe(result: SimulationResult, stations_by_id, routes
             "section": section_label(occupation.section_key, stations_by_id),
             "from": stations_by_id[occupation.from_station].name,
             "to": stations_by_id[occupation.to_station].name,
+            "track_layout": occupation.capacity_model.value.replace("_", " ").title(),
+            "directional_capacity": occupation.directional_capacity,
             "enter": occupation.enter_time,
             "exit": occupation.exit_time,
             "enter_minutes": occupation.enter_time_minutes,
