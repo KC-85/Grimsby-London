@@ -48,6 +48,15 @@ def load_app_data(data_signature):
     return infrastructure, services, proposed_services
 
 
+def service_labels(services: list[Service]) -> dict[str, str]:
+    """Return user-facing service labels based on first departure time."""
+
+    return {
+        service.id: service.first_departure or service.id
+        for service in services
+    }
+
+
 def build_timetable_dataframe(
     services: list[Service],
     stations_by_id,
@@ -59,7 +68,7 @@ def build_timetable_dataframe(
     df = pd.DataFrame(rows)
     df["station"] = df["station_id"].map(lambda station_id: stations_by_id[station_id].name)
     df["route"] = df["route_id"].map(lambda route_id: routes_by_id[route_id].name)
-    df["service_label"] = df["service_id"].str.replace("tpe-", "", regex=False)
+    df["service_label"] = df["service_id"].map(service_labels(services))
     df["status"] = df["service_id"].map(service_status or {}).fillna("scheduled")
     df["delay_minutes"] = df["service_id"].map(service_delays or {}).fillna(0).astype(int)
     return df
@@ -71,11 +80,14 @@ def section_label(section_key: str, stations_by_id) -> str:
 
 
 def build_conflicts_dataframe(result: SimulationResult, stations_by_id) -> pd.DataFrame:
+    labels_by_id = service_labels(
+        [simulated.service for simulated in result.services]
+    )
     rows = [
         {
             "section": section_label(conflict.section_key, stations_by_id),
-            "first_service": conflict.first_service_id,
-            "second_service": conflict.second_service_id,
+            "first_service": labels_by_id.get(conflict.first_service_id, conflict.first_service_id),
+            "second_service": labels_by_id.get(conflict.second_service_id, conflict.second_service_id),
             "days": ", ".join(conflict.service_days),
             "overlap_start": conflict.overlap_start,
             "overlap_end": conflict.overlap_end,
@@ -87,10 +99,13 @@ def build_conflicts_dataframe(result: SimulationResult, stations_by_id) -> pd.Da
 
 
 def build_occupations_dataframe(result: SimulationResult, stations_by_id, routes_by_id) -> pd.DataFrame:
+    labels_by_id = service_labels(
+        [simulated.service for simulated in result.services]
+    )
     rows = [
         {
             "service_id": occupation.service_id,
-            "service_label": occupation.service_id.replace("tpe-", ""),
+            "service_label": labels_by_id.get(occupation.service_id, occupation.service_id),
             "operator": occupation.operator,
             "route": routes_by_id[occupation.route_id].name,
             "section": section_label(occupation.section_key, stations_by_id),
