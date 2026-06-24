@@ -34,6 +34,15 @@ DATA_PATHS = (
 )
 SCENARIOS_PATH = Path("data/scenarios.json")
 TIMELINE_BASE_DATE = pd.Timestamp("2026-01-01")
+DAYS = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+]
 
 
 def data_file_signature() -> tuple[tuple[str, int, int], ...]:
@@ -67,8 +76,13 @@ def build_timetable_dataframe(
     rows = flatten_services(services)
     df = pd.DataFrame(rows)
     df["station"] = df["station_id"].map(lambda station_id: stations_by_id[station_id].name)
+    df["origin_name"] = df["origin"].map(lambda station_id: stations_by_id[station_id].name)
+    df["destination_name"] = df["destination"].map(lambda station_id: stations_by_id[station_id].name)
     df["route"] = df["route_id"].map(lambda route_id: routes_by_id[route_id].name)
     df["service_label"] = df["service_id"].map(service_labels(services))
+    df["timetable_type"] = df["footnote_codes"].map(
+        lambda value: "Proposed" if "PROPOSED" in value.split(", ") else "Current"
+    )
     df["status"] = df["service_id"].map(service_status or {}).fillna("scheduled")
     df["delay_minutes"] = df["service_id"].map(service_delays or {}).fillna(0).astype(int)
     return df
@@ -293,7 +307,8 @@ def render_disruption_controls(services: list[Service], stations_by_id) -> list:
 def render_filters(df: pd.DataFrame) -> pd.DataFrame:
     st.sidebar.header("Filters")
 
-    days = sorted({day for value in df["service_days"] for day in value.split(", ")})
+    available_days = {day for value in df["service_days"] for day in value.split(", ")}
+    days = [day for day in DAYS if day in available_days]
     operators = sorted(df["operator"].unique())
     routes = sorted(df["route"].unique())
     statuses = sorted(df["status"].unique())
@@ -367,6 +382,8 @@ def render_occupations(df: pd.DataFrame) -> None:
         "operator",
         "route",
         "section",
+        "track_layout",
+        "directional_capacity",
         "enter",
         "exit",
         "duration_minutes",
@@ -376,6 +393,108 @@ def render_occupations(df: pd.DataFrame) -> None:
     ]
 
     st.dataframe(df[display_columns], use_container_width=True, hide_index=True)
+
+
+def rows_for_day(df: pd.DataFrame, day: str, days_column: str) -> pd.DataFrame:
+    """Return dataframe rows that operate on the selected day."""
+
+    if df.empty:
+        return df.copy()
+    return df[
+        df[days_column].map(lambda value: day in value.split(", "))
+    ].copy()
+
+
+def build_daily_services_dataframe(timetable_df: pd.DataFrame) -> pd.DataFrame:
+    """Return one operational summary row per service."""
+
+    columns = [
+        "service_id",
+        "service_label",
+        "operator",
+        "timetable_type",
+        "route",
+        "origin_name",
+        "destination_name",
+        "status",
+        "delay_minutes",
+        "footnote_codes",
+    ]
+    return (
+        timetable_df[columns]
+        .drop_duplicates(subset=["service_id"])
+        .sort_values(["service_label", "operator", "route"])
+    )
+
+
+def render_daily_metric_cards(
+    timetable_df: pd.DataFrame,
+    conflicts_df: pd.DataFrame,
+    occupations_df: pd.DataFrame,
+) -> None:
+    """Render summary metrics for one operating day."""
+
+    services = timetable_df.drop_duplicates(subset=["service_id"])
+    total_services = len(services)
+    proposed_services = int((services["timetable_type"] == "Proposed").sum())
+    delayed_services = int((services["status"] == "delayed").sum())
+    cancelled_services = int((services["status"] == "cancelled").sum())
+
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
+    col1.metric("Services", total_services)
+    col2.metric("Proposed", proposed_services)
+    col3.metric("Delayed", delayed_services)
+    col4.metric("Cancelled", cancelled_services)
+    col5.metric("Conflicts", len(conflicts_df))
+    col6.metric("Conflict Minutes", int(conflicts_df["overlap_minutes"].sum()) if not conflicts_df.empty else 0)
+
+    col7, col8, col9 = st.columns(3)
+    col7.metric("Operators", services["operator"].nunique())
+    col8.metric("Routes", services["route"].nunique())
+    col9.metric("Section Occupations", len(occupations_df))
+
+
+def render_daily_timetables(
+    timetable_df: pd.DataFrame,
+    conflicts_df: pd.DataFrame,
+    occupations_df: pd.DataFrame,
+) -> None:
+    """Render complete Monday-to-Sunday operational views."""
+
+    day_tabs = st.tabs([day.title() for day in DAYS])
+    for day, day_tab in zip(DAYS, day_tabs):
+        with day_tab:
+            day_timetable = rows_for_day(timetable_df, day, "service_days")
+            day_conflicts = rows_for_day(conflicts_df, day, "days")
+            day_occupations = rows_for_day(occupations_df, day, "service_days")
+
+            day_timetable = day_timetable.sort_values(
+                ["service_label", "operator", "route", "stop_index"]
+            )
+            day_conflicts = day_conflicts.sort_values(
+                ["overlap_start", "section", "first_service", "second_service"]
+            )
+            day_occupations = day_occupations.sort_values(
+                ["enter_minutes", "section", "service_label"]
+            )
+
+            render_daily_metric_cards(day_timetable, day_conflicts, day_occupations)
+
+            services_tab, timetable_tab, conflicts_tab, occupations_tab = st.tabs(
+                ["Services", "Full Timetable", "Conflicts", "Section Occupations"]
+            )
+            with services_tab:
+                st.dataframe(
+                    build_daily_services_dataframe(day_timetable),
+                    use_container_width=True,
+                    hide_index=True,
+                )
+            with timetable_tab:
+                render_timetable(day_timetable)
+            with conflicts_tab:
+                render_conflicts(day_conflicts)
+            with occupations_tab:
+                render_occupations(day_occupations)
 
 
 def minutes_to_timestamp(value: int) -> pd.Timestamp:
@@ -530,9 +649,11 @@ def main() -> None:
 
     render_metric_cards(simulation_result)
 
-    timetable_tab, conflicts_tab, occupations_tab, metrics_tab = st.tabs(
-        ["Timetable", "Conflicts", "Section Occupations", "Metrics"]
+    daily_tab, timetable_tab, conflicts_tab, occupations_tab, metrics_tab = st.tabs(
+        ["Daily Timetables", "Filtered Timetable", "Conflicts", "Section Occupations", "Metrics"]
     )
+    with daily_tab:
+        render_daily_timetables(df, conflicts_df, occupations_df)
     with timetable_tab:
         render_timetable(filtered_df)
     with conflicts_tab:
