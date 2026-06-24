@@ -27,6 +27,7 @@ from simulation.timetable import Service, flatten_services, load_services
 
 DATA_PATHS = (
     Path("data/services.json"),
+    Path("data/proposed_services.json"),
     Path("data/stations.json"),
     Path("data/routes.json"),
     Path("data/sources.json"),
@@ -43,7 +44,8 @@ def data_file_signature() -> tuple[tuple[str, int, int], ...]:
 def load_app_data(data_signature):
     infrastructure = load_infrastructure()
     services = load_services()
-    return infrastructure, services
+    proposed_services = load_services("data/proposed_services.json")
+    return infrastructure, services, proposed_services
 
 
 def build_timetable_dataframe(
@@ -463,9 +465,22 @@ def main() -> None:
         st.cache_data.clear()
         st.rerun()
 
-    infrastructure, services = load_app_data(data_file_signature())
+    infrastructure, baseline_services, proposed_services = load_app_data(data_file_signature())
     stations_by_id = station_lookup(infrastructure.stations)
     routes_by_id = route_lookup(infrastructure.routes)
+    include_proposal = st.sidebar.toggle(
+        "Include Grand Central proposal",
+        value=False,
+    )
+    services = [
+        *baseline_services,
+        *(proposed_services if include_proposal else []),
+    ]
+    st.sidebar.caption(
+        "Current timetable + Grand Central proposal"
+        if include_proposal
+        else "Current timetable baseline"
+    )
     disruptions = render_disruption_controls(services, stations_by_id)
     simulation_result = run_simulation(services, infrastructure, disruptions)
 
