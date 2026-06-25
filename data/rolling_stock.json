@@ -155,6 +155,49 @@
           "source_type": "secondary"
         }
       ]
+    },
+    {
+      "id": "br_class_180_grand_central",
+      "name": "British Rail Class 180",
+      "family": "Adelante",
+      "operator_scope": ["Grand Central"],
+      "status": "proposed_initial_stock",
+      "formation": {
+        "cars": 5,
+        "length_metres": 116.52,
+        "seats": 287
+      },
+      "traction": {
+        "type": "diesel_hydraulic",
+        "maximum_speed_mph": 125
+      },
+      "coupling": {
+        "type": "Scharfenberg Type 330",
+        "multiple_unit_compatible": true
+      },
+      "route_assignments": [
+        {
+          "route_ids": [
+            "gc_proposed_cleethorpes_to_doncaster",
+            "gc_proposed_doncaster_to_cleethorpes"
+          ],
+          "formation_cars": 5,
+          "assignment_status": "proposal_confirmed"
+        }
+      ],
+      "notes": [
+        "The Class 180 is the initial rolling-stock assumption for the proposed Cleethorpes extensions.",
+        "The five-car unit is planned to attach to or detach from an existing Grand Central West Riding service at Doncaster.",
+        "Class 820 is intentionally excluded until it enters service; its current planned introduction is 2028."
+      ],
+      "sources": [
+        {
+          "title": "British Rail Class 180",
+          "url": "https://en.wikipedia.org/wiki/British_Rail_Class_180",
+          "accessed": "2026-06-24",
+          "source_type": "secondary"
+        }
+      ]
     }
   ]
 }
