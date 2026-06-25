@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Front-end build artifacts
+dist/
+node_modules/
+npm-debug.log
+yarn-error.log
+nuxt.config.js
+vue.config.js
+vite.config.js
