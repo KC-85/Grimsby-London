@@ -1,1 +1,171 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  button,
+  select,
+  input {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .toolbar-band {
+    @apply mb-5 flex flex-col gap-4 border border-[#d7d2c8] bg-[#fbfaf7] p-3 lg:flex-row lg:items-center lg:justify-between;
+    border-radius: 8px;
+  }
+
+  .day-grid {
+    @apply grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7;
+  }
+
+  .day-button {
+    @apply min-h-10 border border-[#c9c2b5] bg-white px-3 text-sm font-semibold text-[#4d4a43] transition hover:border-[#235c4f] hover:text-[#235c4f];
+    border-radius: 6px;
+  }
+
+  .day-button-active {
+    @apply border-[#235c4f] bg-[#235c4f] text-white hover:text-white;
+  }
+
+  .filter-grid {
+    @apply grid grid-cols-1 gap-3 sm:grid-cols-2;
+  }
+
+  .filter-field {
+    @apply flex min-w-56 flex-col gap-1 text-xs font-semibold uppercase text-[#6f6a60];
+  }
+
+  .filter-field select {
+    @apply h-10 border border-[#c9c2b5] bg-white px-3 text-sm font-medium normal-case text-[#171717] outline-none focus:border-[#235c4f];
+    border-radius: 6px;
+  }
+
+  .control-toggle {
+    @apply flex h-10 items-center gap-2 border border-[#c9c2b5] bg-white px-3 text-sm font-semibold text-[#312f2a];
+    border-radius: 6px;
+  }
+
+  .command-button {
+    @apply h-10 border border-[#235c4f] bg-[#235c4f] px-4 text-sm font-semibold text-white transition hover:bg-[#1d4d42] disabled:cursor-wait disabled:opacity-60;
+    border-radius: 6px;
+  }
+
+  .state-panel {
+    @apply mb-5 border px-4 py-3 text-sm font-medium;
+    border-radius: 8px;
+  }
+
+  .metric-grid {
+    @apply mb-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6;
+  }
+
+  .metric-card {
+    @apply border bg-white p-4;
+    border-radius: 8px;
+  }
+
+  .metric-card span {
+    @apply block text-xs font-semibold uppercase text-[#6f6a60];
+  }
+
+  .metric-card strong {
+    @apply mt-2 block text-2xl font-semibold;
+  }
+
+  .metric-ink {
+    @apply border-[#c9c2b5];
+  }
+
+  .metric-green {
+    @apply border-[#73a18e];
+  }
+
+  .metric-red {
+    @apply border-[#c8553d];
+  }
+
+  .metric-amber {
+    @apply border-[#d39b31];
+  }
+
+  .metric-blue {
+    @apply border-[#5f8fb3];
+  }
+
+  .content-shell {
+    @apply border border-[#d7d2c8] bg-[#fbfaf7];
+    border-radius: 8px;
+  }
+
+  .table-tabs {
+    @apply flex flex-wrap gap-2 border-b border-[#d7d2c8] p-3;
+  }
+
+  .table-tabs button {
+    @apply h-9 border border-[#c9c2b5] bg-white px-3 text-sm font-semibold text-[#4d4a43] hover:border-[#235c4f] hover:text-[#235c4f];
+    border-radius: 6px;
+  }
+
+  .table-tabs .table-tab-active {
+    @apply border-[#171717] bg-[#171717] text-white hover:border-[#171717] hover:text-white;
+  }
+
+  .table-wrap {
+    @apply max-h-[650px] overflow-auto;
+  }
+
+  .data-table {
+    @apply w-full min-w-[980px] border-collapse text-left text-sm;
+  }
+
+  .data-table thead {
+    @apply sticky top-0 z-10 bg-[#ebe7df];
+  }
+
+  .data-table th {
+    @apply border-b border-[#d7d2c8] px-3 py-2 text-xs font-semibold uppercase text-[#5f5a51];
+  }
+
+  .data-table td {
+    @apply border-b border-[#e3ded5] px-3 py-2 align-middle text-[#2f2d29];
+  }
+
+  .data-table tbody tr {
+    @apply bg-white;
+  }
+
+  .data-table tbody tr:nth-child(even) {
+    @apply bg-[#f7f5f0];
+  }
+
+  .empty-cell {
+    @apply py-8 text-center text-[#6f6a60];
+  }
+
+  .status-pill {
+    @apply inline-flex min-w-20 justify-center border px-2 py-1 text-xs font-semibold capitalize;
+    border-radius: 999px;
+  }
+
+  .status-scheduled {
+    @apply border-[#7aa38f] bg-[#eef7f1] text-[#235c4f];
+  }
+
+  .status-delayed {
+    @apply border-[#d39b31] bg-[#fff8e6] text-[#714d08];
+  }
+
+  .status-cancelled {
+    @apply border-[#c8553d] bg-[#fff5f1] text-[#7a2f20];
+  }
+}
