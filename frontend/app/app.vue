@@ -133,6 +133,7 @@ const trainLabel = (stock: RollingStockSummary | null) => {
   if (!stock?.name) return 'Unknown'
   return stock.cars ? `${stock.name} (${stock.cars}-car)` : stock.name
 }
+const selectedDayLabel = computed(() => dayLabel(selectedDay.value))
 
 const apiPath = computed(
   () => `/api/simulation/day/${selectedDay.value}?include_proposal=${includeProposal.value}`,
@@ -161,6 +162,14 @@ const operators = computed(() => {
 const routes = computed(() => {
   const values = data.value?.services.map((service) => service.route) ?? []
   return [...new Set(values)].sort()
+})
+
+const visibleRouteLabel = computed(() => {
+  return selectedRoute.value === 'all' ? 'All routes' : selectedRoute.value
+})
+
+const visibleOperatorLabel = computed(() => {
+  return selectedOperator.value === 'all' ? 'All operators' : selectedOperator.value
 })
 
 const serviceMatchesFilters = (service: { operator: string, route: string }) => {
@@ -205,31 +214,41 @@ const metricCards = computed(() => {
   if (!metrics) return []
 
   return [
-    { label: 'Services', value: formatNumber(metrics.services), tone: 'ink' },
-    { label: 'Active', value: formatNumber(metrics.active_services), tone: 'green' },
-    { label: 'Conflicts', value: formatNumber(metrics.conflicts), tone: metrics.conflicts > 0 ? 'red' : 'green' },
-    { label: 'Conflict min', value: formatNumber(metrics.conflict_minutes), tone: metrics.conflict_minutes > 0 ? 'amber' : 'green' },
-    { label: 'Known seats', value: formatNumber(metrics.known_seats), tone: 'blue' },
-    { label: 'Occupations', value: formatNumber(metrics.section_occupations), tone: 'ink' },
+    { label: 'Services', value: formatNumber(metrics.services), sublabel: `${formatNumber(metrics.proposed_services)} proposed`, tone: 'ink' },
+    { label: 'Active', value: formatNumber(metrics.active_services), sublabel: `${formatNumber(metrics.cancelled_services)} cancelled`, tone: 'green' },
+    { label: 'Conflicts', value: formatNumber(metrics.conflicts), sublabel: `${formatNumber(metrics.conflict_minutes)} minutes`, tone: metrics.conflicts > 0 ? 'red' : 'green' },
+    { label: 'Known seats', value: formatNumber(metrics.known_seats), sublabel: `${formatNumber(metrics.unknown_capacity_services)} unknown`, tone: 'blue' },
+    { label: 'Operators', value: formatNumber(metrics.operators), sublabel: `${formatNumber(metrics.routes)} routes`, tone: 'purple' },
+    { label: 'Occupations', value: formatNumber(metrics.section_occupations), sublabel: 'section windows', tone: 'amber' },
   ]
+})
+
+const activeRows = computed(() => {
+  if (activeTable.value === 'services') return filteredServices.value.length
+  if (activeTable.value === 'conflicts') return filteredConflicts.value.length
+  if (activeTable.value === 'occupations') return filteredOccupations.value.length
+  return filteredTimetable.value.length
 })
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#f4f2ed] text-[#171717]">
+  <div class="min-h-screen bg-[#f5f6f7] text-[#16181c]">
     <NuxtRouteAnnouncer />
 
-    <header class="border-b border-[#d7d2c8] bg-[#fbfaf7]">
-      <div class="mx-auto flex max-w-[1600px] flex-col gap-5 px-5 py-5 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p class="text-xs font-semibold uppercase text-[#6f6a60]">Operational simulation</p>
-          <h1 class="mt-1 text-2xl font-semibold text-[#171717]">Grimsby-London Rail Planning</h1>
-          <p class="mt-2 max-w-3xl text-sm text-[#5f5a51]">
-            Day-by-day service, conflict, section occupation, and rolling-stock view.
+    <header class="app-header">
+      <div class="mx-auto flex max-w-[1600px] flex-col gap-5 px-5 py-5 lg:flex-row lg:items-center lg:justify-between">
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="eyebrow">Operational simulation</span>
+            <span class="header-chip">API linked</span>
+          </div>
+          <h1 class="mt-2 text-2xl font-semibold tracking-normal text-[#16181c]">Grimsby-London Rail Planning</h1>
+          <p class="mt-2 max-w-3xl text-sm text-[#5b616b]">
+            Cleethorpes, Grimsby Town, Doncaster and proposed London path modelling.
           </p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-3">
+        <div class="header-actions">
           <label class="control-toggle">
             <input v-model="includeProposal" type="checkbox" class="h-4 w-4 accent-[#235c4f]">
             <span>Grand Central proposal</span>
@@ -243,6 +262,25 @@ const metricCards = computed(() => {
     </header>
 
     <main class="mx-auto max-w-[1600px] px-5 py-5">
+      <section v-if="data" class="context-strip">
+        <div>
+          <span>Day</span>
+          <strong>{{ selectedDayLabel }}</strong>
+        </div>
+        <div>
+          <span>Operator</span>
+          <strong>{{ visibleOperatorLabel }}</strong>
+        </div>
+        <div>
+          <span>Route</span>
+          <strong>{{ visibleRouteLabel }}</strong>
+        </div>
+        <div>
+          <span>Proposal</span>
+          <strong>{{ includeProposal ? 'Included' : 'Excluded' }}</strong>
+        </div>
+      </section>
+
       <section class="toolbar-band">
         <div class="day-grid" aria-label="Operating day">
           <button
@@ -298,6 +336,7 @@ const metricCards = computed(() => {
           >
             <span>{{ metric.label }}</span>
             <strong>{{ metric.value }}</strong>
+            <small>{{ metric.sublabel }}</small>
           </article>
         </section>
 
@@ -306,36 +345,48 @@ const metricCards = computed(() => {
         </section>
 
         <section class="content-shell">
-          <nav class="table-tabs" aria-label="Dashboard table">
-            <button
-              type="button"
-              :class="{ 'table-tab-active': activeTable === 'services' }"
-              @click="activeTable = 'services'"
-            >
-              Services
-            </button>
-            <button
-              type="button"
-              :class="{ 'table-tab-active': activeTable === 'conflicts' }"
-              @click="activeTable = 'conflicts'"
-            >
-              Conflicts
-            </button>
-            <button
-              type="button"
-              :class="{ 'table-tab-active': activeTable === 'occupations' }"
-              @click="activeTable = 'occupations'"
-            >
-              Occupations
-            </button>
-            <button
-              type="button"
-              :class="{ 'table-tab-active': activeTable === 'timetable' }"
-              @click="activeTable = 'timetable'"
-            >
-              Timetable
-            </button>
-          </nav>
+          <div class="content-header">
+            <div>
+              <p class="eyebrow">Current view</p>
+              <h2>{{ dayLabel(activeTable) }}</h2>
+            </div>
+            <div class="content-count">
+              {{ formatNumber(activeRows) }} rows
+            </div>
+          </div>
+
+          <div class="table-tabs-wrap">
+            <nav class="table-tabs" aria-label="Dashboard table">
+              <button
+                type="button"
+                :class="{ 'table-tab-active': activeTable === 'services' }"
+                @click="activeTable = 'services'"
+              >
+                Services
+              </button>
+              <button
+                type="button"
+                :class="{ 'table-tab-active': activeTable === 'conflicts' }"
+                @click="activeTable = 'conflicts'"
+              >
+                Conflicts
+              </button>
+              <button
+                type="button"
+                :class="{ 'table-tab-active': activeTable === 'occupations' }"
+                @click="activeTable = 'occupations'"
+              >
+                Occupations
+              </button>
+              <button
+                type="button"
+                :class="{ 'table-tab-active': activeTable === 'timetable' }"
+                @click="activeTable = 'timetable'"
+              >
+                Timetable
+              </button>
+            </nav>
+          </div>
 
           <div class="table-wrap">
             <table v-if="activeTable === 'services'" class="data-table">
@@ -363,6 +414,9 @@ const metricCards = computed(() => {
                       {{ service.status }}
                     </span>
                   </td>
+                </tr>
+                <tr v-if="filteredServices.length === 0">
+                  <td colspan="7" class="empty-cell">No services for the current filters.</td>
                 </tr>
               </tbody>
             </table>
@@ -413,6 +467,9 @@ const metricCards = computed(() => {
                   <td>{{ occupation.duration_minutes }} min</td>
                   <td>{{ trainLabel(occupation.rolling_stock) }}</td>
                 </tr>
+                <tr v-if="filteredOccupations.length === 0">
+                  <td colspan="7" class="empty-cell">No section occupations for the current filters.</td>
+                </tr>
               </tbody>
             </table>
 
@@ -441,6 +498,9 @@ const metricCards = computed(() => {
                       {{ row.status }}
                     </span>
                   </td>
+                </tr>
+                <tr v-if="filteredTimetable.length === 0">
+                  <td colspan="7" class="empty-cell">No timetable rows for the current filters.</td>
                 </tr>
               </tbody>
             </table>
